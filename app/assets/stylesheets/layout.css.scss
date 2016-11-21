@@ -1,0 +1,40 @@
+/* color palette:
+evening: #262228;
+sunflowers: #ffcf00;
+starry night: #0375B4;
+irises: #007849;
+*/
+
+#navbar {
+  width: 100%;
+  display: inline-block;
+  color: white;
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-size: 1.7em;
+  border-radius: 0;
+  margin-bottom: 0;
+  padding-left: 20%;
+}
+
+.nav-item {
+  list-style-type: none;
+  float: left;
+  margin: 15px 40px;
+  padding: 0; 
+
+  a {
+    text-decoration: none;
+    color: white;
+    display: block;
+  }
+
+  a:hover {
+    color: #ffcf00;
+    text-decoration: none;
+  }
+
+  a.active {
+    color: #007849;
+    text-decoration: none;
+  }
+}
