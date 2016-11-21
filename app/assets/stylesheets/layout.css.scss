@@ -49,7 +49,7 @@ irises: #007849;
   width: 370px;
   height: 160px;
   background: #1d1d1d;
-  border: 1px solid #444;
+  border: 1px solid #262228;
   margin: 0 auto;
   position: relative;
   top: 50%;
@@ -71,4 +71,18 @@ irises: #007849;
   font-family: 'Raleway', cursive;
   color: #777;
   letter-spacing: 1px;
+}
+
+.intro {
+  text-align: center;
+  font-family: 'Raleway', cursive;
+  font-size: 1.0em;
+  letter-spacing: 2px;
+  background: #0375B4;
+  margin: -5px 0;
+  width: 100hw;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #262228;
+  border-top: 1px solid #262228;
+  color: white;
 }
