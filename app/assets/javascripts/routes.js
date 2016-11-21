@@ -19,7 +19,7 @@
         })
          .state('home.discussion', {
           url: 'discussion',
-          templateUrl: 'posts/posts.html',
+          templateUrl: 'discussion/posts.html',
           controller: 'PostsController as vm'
         })
           .state('about', {
@@ -35,12 +35,12 @@
           .state('home.login', {
           url: 'login',
           templateUrl: 'auth/login.html',
-          controller: 'AuthController'
+          controller: 'AuthController as vm'
     })
           .state('home.register', {
           url: 'register',
           templateUrl: 'auth/register.html',
-          controller: 'AuthController',
+          controller: 'AuthController as vm',
     });
 
         $urlRouterProvider.otherwise('/');

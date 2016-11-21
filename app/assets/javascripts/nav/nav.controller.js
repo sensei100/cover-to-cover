@@ -5,6 +5,25 @@
     $scope.signedIn = Auth.isAuthenticated;
     $scope.logout = Auth.logout;
 
+    //instantiated info  
+    activate();
+
+    //defined methods on the vm
+    function activate() {
+        getCurrentUser();
+    };
+
+    function getCurrentUser() {
+        return Auth.currentUser()
+                   .then(setCurrentUser);
+    };
+
+    function setCurrentUser(user) {
+        console.log(user);
+        return $scope.user = user;
+    };
+
+
     Auth.currentUser().then(function (user){
     $scope.user = user;
     });
