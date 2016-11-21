@@ -1,11 +1,10 @@
 (function() { 
   'use strict';
 
-  function AuthController($scope) {
-    $scope.name = "test"
-  }
+  function AuthController($scope, Auth) {
+    }
 
-  AuthController.$inject = ['$scope']
+  AuthController.$inject = ['$scope', 'Auth']
 
 angular
   .module('app')

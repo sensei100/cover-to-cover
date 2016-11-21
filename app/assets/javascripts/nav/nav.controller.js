@@ -1,11 +1,28 @@
 (function() { 
   'use strict';
 
-  function NavController($scope) {
-    $scope.name = "test"
+  function NavController($scope, Auth) {
+    $scope.signedIn = Auth.isAuthenticated;
+    $scope.logout = Auth.logout;
+
+    Auth.currentUser().then(function (user){
+    $scope.user = user;
+    });
+
+    $scope.$on('devise:new-registration', function (e, user){
+    $scope.user = user;
+    });
+
+    $scope.$on('devise:login', function (e, user){
+    $scope.user = user;
+    });
+
+    $scope.$on('devise:logout', function (e, user){
+    $scope.user = {};
+    });
   }
 
-  NavController.$inject = ['$scope']
+  NavController.$inject = ['$scope', 'Auth']
 
 angular
   .module('app')
