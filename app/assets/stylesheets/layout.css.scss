@@ -5,6 +5,10 @@ starry night: #0375B4;
 irises: #007849;
 */
 
+body {
+padding: 0px;
+}
+
 #navbar {
   width: 100%;
   display: inline-block;
@@ -85,3 +89,48 @@ irises: #007849;
   border-top: 1px solid #262228;
   color: white;
 }
+
+.user-nav {
+  font-family: 'Raleway', cursive;
+  font-size: 1.3em;
+  border-radius: 0;
+  margin-bottom: 0;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+.user-nav-item {
+  display: inline-block;
+  list-style-type: none;
+  float: left;
+  margin-left: 50px;
+ 
+  a {
+    text-decoration: none;
+    color: #42282C;
+    display: block;
+  }
+
+  a:hover {
+    color: #777;
+    text-decoration: none;
+  }
+
+  a.active {
+    color: #6D997A;
+    text-decoration: none;
+  }
+}
+
+#user-navbar {
+    display: inline-block;
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding-left: 28%;
+}
+
+
+
+
+
