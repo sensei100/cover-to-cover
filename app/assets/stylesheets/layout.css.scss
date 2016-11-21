@@ -38,3 +38,37 @@ irises: #007849;
     text-decoration: none;
   }
 }
+
+.banner {
+  height: 450px;
+  background: url("home-books.jpg");
+  background-size: cover;
+}
+
+#site-brand {
+  width: 370px;
+  height: 160px;
+  background: #1d1d1d;
+  border: 1px solid #444;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  text-align: center;
+}
+
+#site-title {
+  font-size: 2.8em;
+  line-height: 1.2;
+  color: white;
+  font-family: 'Sue Ellen Francisco', cursive;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+#subtitle {
+  font-family: 'Raleway', cursive;
+  color: #777;
+  letter-spacing: 1px;
+}
