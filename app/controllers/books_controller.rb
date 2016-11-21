@@ -35,7 +35,14 @@ class BooksController < ApplicationController
 
   def destroy
     book = Book.find(params[:id])
-    
+    if book.user == current_user.id
+      if book.destroy
+        render json: { status: 'ok' }
+    else
+      render json: 
+      { errors: book.errors.full_messages },
+      status: :unprocessable_entity
+    end
   end
 
   private
