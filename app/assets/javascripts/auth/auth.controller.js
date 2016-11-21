@@ -1,10 +1,16 @@
 (function() { 
   'use strict';
 
-  function AuthController($scope, Auth) {
+  function AuthController($scope, $state, Auth) {
+
+    $scope.login = function() {
+    Auth.login($scope.user).then(function(){
+      $state.go('home');
+    });
+  };
     }
 
-  AuthController.$inject = ['$scope', 'Auth']
+  AuthController.$inject = ['$scope', '$state', 'Auth']
 
 angular
   .module('app')
