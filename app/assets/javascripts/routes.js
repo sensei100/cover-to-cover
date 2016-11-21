@@ -15,7 +15,12 @@
          .state('home.books', {
           url: 'books',
           templateUrl: 'books/books.html',
-          controller: 'BookController as vm'
+          controller: 'BooksController as vm'
+        })
+         .state('home.discussion', {
+          url: 'discussion',
+          templateUrl: 'posts/posts.html',
+          controller: 'PostsController as vm'
         })
           .state('about', {
           url: '/about',
