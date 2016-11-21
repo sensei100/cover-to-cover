@@ -5,7 +5,7 @@
     $scope.name = "test"
   }
 
-  AboutController.$inject = ['$scope']
+  AuthController.$inject = ['$scope']
 
 angular
   .module('app')

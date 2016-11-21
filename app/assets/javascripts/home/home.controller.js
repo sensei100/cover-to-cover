@@ -5,7 +5,7 @@
     $scope.name = "test"
   }
 
-  AboutController.$inject = ['$scope']
+  HomeController.$inject = ['$scope']
 
 angular
   .module('app')

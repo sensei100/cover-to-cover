@@ -5,7 +5,7 @@
     $scope.name = "test"
   }
 
-  AboutController.$inject = ['$scope']
+  BooksController.$inject = ['$scope']
 
 angular
   .module('app')
