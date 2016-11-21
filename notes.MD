@@ -8,6 +8,7 @@ Member profile: Shows books read, all posts/comments
 Books reviewed?
 
 Models:
-Books: has_many users through List
-Users: has_many posts, has_many books through List
+Books: has_many users through BookUser
+  -title, author, isbn, review, rating
+Users: has_many posts, has_many books through BookUser
 Posts: belongs_to users
