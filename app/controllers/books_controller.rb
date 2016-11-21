@@ -42,6 +42,7 @@ class BooksController < ApplicationController
       render json: 
       { errors: book.errors.full_messages },
       status: :unprocessable_entity
+      end
     end
   end
 
