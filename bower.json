@@ -4,7 +4,7 @@
     "dependencies": {
      "angular": "v1.5.8",
      "angular-ui-router": "latest",
-     "bootstrap": "latest",
+     "bootstrap-sass-official": "latest",
      "angular-devise": "latest"
     }
   }
