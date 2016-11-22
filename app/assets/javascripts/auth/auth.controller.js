@@ -8,7 +8,14 @@
       $state.go('home');
     });
   };
-    }
+
+    $scope.register = function() {
+    Auth.register($scope.user).then(function(){
+      $state.go('home');
+    });
+  };
+
+}
 
   AuthController.$inject = ['$scope', '$state', 'Auth']
 
