@@ -1,12 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-  respond_to :json
   before_action :configure_permitted_parameters, if: :devise_controller?
-  after_action :set_csrf_cookie
-
-  def set_csrf_cookie
-    cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
-  end
+  skip_before_action :verify_authenticity_token
+  respond_to :json
 
   def index
   end
