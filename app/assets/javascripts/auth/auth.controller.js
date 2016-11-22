@@ -1,23 +1,25 @@
 (function() { 
   'use strict';
 
-  function AuthController($scope, $state, Auth) {
+  function AuthController($state, Auth) {
 
-    $scope.login = function() {
-    Auth.login($scope.user).then(function(){
+    var vm = this;
+
+    vm.login = function() {
+    Auth.login(vm.user).then(function(){
       $state.go('home');
     });
   };
 
-    $scope.register = function() {
-    Auth.register($scope.user).then(function(){
+    vm.register = function() {
+    Auth.register(vm.user).then(function(){
       $state.go('home');
     });
   };
 
 }
 
-  AuthController.$inject = ['$scope', '$state', 'Auth']
+  AuthController.$inject = ['$state', 'Auth']
 
 angular
   .module('app')
