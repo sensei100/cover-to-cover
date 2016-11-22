@@ -4,9 +4,15 @@
   function AuthController($state, Auth) {
 
     var vm = this;
+    var config = {
+      headers: {
+      'X-HTTP-Method-Override': 'POST'
+    }
+  };
 
     vm.login = function() {
-    Auth.login(vm.user).then(function(){
+    debugger;
+    Auth.login(vm.user, config).then(function(){
       $state.go('home');
     });
   };
