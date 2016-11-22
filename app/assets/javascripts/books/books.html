@@ -1,2 +1,37 @@
 
-<h1>test</h1><h1>test</h1><h1>test</h1><h1>test</h1><h1>test</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div id="user-profile" class="books-banner">
+    </div>
+  </div>
+</div>
+
+<div class="book-search-box">
+    <h3 class="book-title">Looking for a new book?</h3>
+    <form>
+      <label class="book-search-label">Book Search:</label>
+      <input id="book-input" ng-model="vm.searchTerm" type="text" name="book-search"><br><br>
+      <label class="book-search-label">Sort by:</label>
+        <select id="option" ng-model="orderProp">
+          <option value="volumeInfo.authors">Alphabetical by Author</option>
+          <option selected="selected" value="volumeInfo.title">Alphabetical by Title</option>
+        </select>
+            
+      <input class="btn book-submit" ng-click="vm.getBooks()" type="submit" value="Find Books">
+    </form>
+  </div>
+
+  <table id="resultsTbl" class="table table-striped">
+    <tbody>
+      <tr ng-repeat="item in vm.books | orderBy:orderProp">
+        <td><a ng-href="{{item.volumeInfo.infoLink}}" target="_blank"><img ng-src=
+          "{{item.volumeInfo.imageLinks.smallThumbnail}}" /></a></td>
+        <td>{{item.volumeInfo.title}}<br />
+          By: {{item.volumeInfo.authors | formatFilter}}<br />
+          Published: {{item.volumeInfo.publisher}}, {{item.volumeInfo.publishedDate |
+         dateFilter}}
+        </td>
+       </tr>
+    </tbody>
+  </table>
+</div>
