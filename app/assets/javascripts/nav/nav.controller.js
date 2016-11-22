@@ -1,8 +1,8 @@
 (function() { 
   'use strict';
 
-  function NavController($scope, Auth, $state) {
-    var vm = this
+  function NavController($scope, Auth, $state, $http) {
+    var vm = this;
     vm.signedIn = Auth.isAuthenticated;
     vm.logout = Auth.logout;
     vm.getCurrentUser = getCurrentUser;
@@ -40,12 +40,12 @@
     });
 
     $scope.$on('devise:logout', function (e, user){
-      $scope.user = undefined;
-      $state.go('home')
+      return vm.user = {};
     });
+
   }
 
-  NavController.$inject = ['$scope', 'Auth', '$state']
+  NavController.$inject = ['$scope', 'Auth', '$state', '$http']
 
 angular
   .module('app')
