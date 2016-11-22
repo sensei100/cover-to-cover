@@ -35,13 +35,23 @@
           .state('home.login', {
           url: 'login',
           templateUrl: 'auth/login.html',
-          controller: 'AuthController as vm'
+          controller: 'AuthController as vm',
+          onEnter: ['$state', 'Auth', function($state, Auth) {
+            Auth.currentUser().then(function(){
+            $state.go('home');
+            });
+        }]
     })
           .state('home.register', {
           url: 'register',
           templateUrl: 'auth/register.html',
           controller: 'AuthController as vm',
-    });
+          onEnter: ['$state', 'Auth', function($state, Auth) {
+            Auth.currentUser().then(function(){
+            $state.go('home');
+            });
+        }]
+    })
 
         $urlRouterProvider.otherwise('/');
       }]);

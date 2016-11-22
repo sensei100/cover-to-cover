@@ -40,7 +40,8 @@
     });
 
     $scope.$on('devise:logout', function (e, user){
-      return vm.user = {};
+      $scope.user = undefined;
+      $state.go('home')
     });
   }
 
