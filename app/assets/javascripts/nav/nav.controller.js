@@ -2,7 +2,7 @@
   'use strict';
 
   function NavController($scope, Auth, $state) {
-    var vm = this;
+    var vm = this
     vm.signedIn = Auth.isAuthenticated;
     vm.logout = Auth.logout;
     vm.getCurrentUser = getCurrentUser;

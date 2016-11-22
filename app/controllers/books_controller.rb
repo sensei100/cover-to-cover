@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  #before_action :authenticate_user!, only: [:create, :update, :destroy]
+  
   
   def index
     books = Book.all
