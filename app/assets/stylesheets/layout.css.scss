@@ -6,7 +6,8 @@ irises: #007849;
 */
 
 body {
-padding: 0px;
+padding: 0;
+margin: 0;
 }
 
 #navbar {
@@ -130,6 +131,39 @@ padding: 0px;
     padding-left: 28%;
 }
 
+.about-page {
+  margin:0 ! important;
+  padding:0 ! important;
+  width: 100hw;
+}
+
+.about {
+  margin: 50px;
+  padding: 30px;
+  font-family: 'Raleway', cursive;
+  font-size: 1.2em;
+}
+
+.about-list {
+  padding-bottom: 10px;
+}
+
+.sidebar-right {
+  height: 100vh;
+  background: url('about-banner.jpg');
+  background-size: cover;
+  box-sizing: border-box;
+  border-left: 1px solid #6D997A;
+}
+
+
+
+@media only screen and (max-width : 1200px) {
+  .about {
+    margin: 20px;
+    padding: 10px;
+    }
+  }
 
 
 
