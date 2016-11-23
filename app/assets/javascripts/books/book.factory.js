@@ -2,30 +2,17 @@
 
   'use strict';
 
-  function BookFactory($scope, $http) {
-      return {
+  function BookFactory($http) {
+    return {
       getBooks: getBooks
     }
 
-    function getBooks(query) {
-        return $http.get('https://www.googleapis.com/books/v1/volumes?q=' + query)
-        
-          .then(handleResponse) 
-          .catch(handleError);
-          
-    }
-  
-    function handleResponse(response) {
-      console.log(response)
-      return response.items
-    }
+  function getBooks (query) {
+    $http.get('https:www.googleapis.com/books/v1/volumes?q=' + query)  
+    };
+  }; 
 
-    function handleError(error) {
-      console.log(error) 
-    }
-  }
-
-  BookFactory.$inject = ['$scope', '$http']
+  BookFactory.$inject = ['$http']
 
   angular
     .module('app')
