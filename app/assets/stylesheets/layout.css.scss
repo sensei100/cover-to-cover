@@ -170,6 +170,58 @@ form {
   margin-bottom: 10px;
 }
 
+.sidebar-left {
+  float: left;
+  width: 25%;
+  height: 100vh;
+  background: #ffcf00;
+  margin-top: -5px;
+  box-sizing: border-box;
+  padding: 50px;
+  border-right: 1px solid #262228;
+}
+
+.main {
+  float: left;
+  box-sizing: border-box;
+  width: 75%;
+  padding: 30px;
+  margin-top: -5px;
+  height: 100vh;
+}
+
+.user-banner {
+  height: 200px;
+  background: url("user-banner.jpg");
+  background-size: cover;
+}
+
+#profile-bar {
+  background: #007849;
+  width: 100hw;
+  margin: -5px;
+  border-radius: 0;
+  text-align: center;
+  font-family: 'Raleway', cursive;
+  color: #262228;
+  border-bottom: 1px solid #262228;
+  border-top: 1px solid #262228;
+}
+
+.profile-links {
+  font-family: 'Raleway', cursive;
+  font-size: 20px;
+  color: #42282C;
+  line-height: 2.0;
+}
+
+a.profile-links:active,
+a.profile-links:hover,
+a.profile-links:focus {
+  text-decoration: none;
+  color: #C5BE8B; 
+}
+
 
 
 @media only screen and (max-width : 1200px) {
