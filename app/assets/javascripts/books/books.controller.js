@@ -1,8 +1,10 @@
+
 (function() { 
   'use strict';
 
-  function BooksController($scope, BookFactory) {
-    $scope.searchTerm = "";
+  function BooksController($scope, $stateParams, BookFactory) {
+    $scope.bookResults = [];
+    $scope.searchTerm = $stateParams.query;
 
     $scope.getBooks = function () {
       BookFactory.get({ q: $scope.searchTerm }, function (response) {
@@ -12,7 +14,7 @@
     }
   };
 
-  BooksController.$inject = ['$scope', 'BookFactory']
+  BooksController.$inject = ['$scope', '$stateParams', 'BookFactory']
 
 angular
   .module('app')
