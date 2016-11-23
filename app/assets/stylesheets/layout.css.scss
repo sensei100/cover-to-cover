@@ -102,10 +102,12 @@ margin: 0;
 }
 
 .user-nav-item {
+  padding-top: 5px;
   display: inline-block;
   list-style-type: none;
   float: left;
   margin-left: 50px;
+  height: 50px;
  
   a {
     text-decoration: none;
