@@ -13,10 +13,10 @@
   function BookComponentController(BookFactory, $state) {
     var ctrl = this;
 
-    ctrl.createBook = createBook;
+    ctrl.addBookReview = addBookReview;
   
-  function createBook() {
-    return BookFactory.createBook(ctrl.newBook)
+  function addBookReview() {
+    return BookFactory.addBookReview(ctrl.book)
         .then(function() {
           $state.go('profile')
         })

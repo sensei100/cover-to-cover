@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <form id="add-book-review" name="form" ng-submit="">     
+      <form id="add-book-review" name="form" ng-submit="$ctrl.addBookReview()">     
         <div class="input-group">
           <label>Review:</label>
-          <textarea name="review"></textarea>
+          <textarea ng-model="$ctrl.book.review" name="review"></textarea>
         </div>
 
         <div class="input-group">
           <label>Rating:</label>
-          <select id="rating" value="5">
+          <select id="rating" value="5" ng-model="$ctrl.book.rating">
             <option>5</option>
             <option>4</option>
             <option>3</option>
