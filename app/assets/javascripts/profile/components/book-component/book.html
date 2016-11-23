@@ -1,7 +1,28 @@
-<form id="create-book" name="form" ng-submit="$ctrl.createBook()">     
-    <input class="form-control" type="text" placeholder="Title" name="title" ng-model="$ctrl.newBook.title" required="required"></input>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <form id="add-book-review" name="form" ng-submit="">     
+        <div class="input-group">
+          <label>Review:</label>
+          <textarea name="review"></textarea>
+        </div>
 
-    <input type="text" name="author" class="form-control" id="author" placeholder="Author" ng-model="$ctrl.newBook.author" required="required"></input>
-                    
-    <input class="btn btn-submit" type="submit" value="Add Book">
-</form>
+        <div class="input-group">
+          <label>Rating:</label>
+          <select id="rating" value="5">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        </div>
+
+        <input id="submit-review" class="btn btn-primary" type="submit" value="Add Book Review">
+      </form>
+    </div>
+    <div class="col-md-4">
+      
+    </div>
+  </div>
+</div>

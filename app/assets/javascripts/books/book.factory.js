@@ -2,17 +2,17 @@
 
   'use strict';
 
-  function BookFactory($http) {
-    return {
-      getBooks: getBooks
-    }
+  function BookFactory($http, $q) {
 
-  function getBooks (query) {
-    $http.get('https://www.googleapis.com/books/v1/volumes?q=' + query)  
-    };
+    var deferred = $q.defer();
+    
+
+    function getBooks (query) {
+      $http.get('https://www.googleapis.com/books/v1/volumes?q=' + query)  
+      };
   }; 
 
-  BookFactory.$inject = ['$http']
+  BookFactory.$inject = ['$http', '$q']
 
   angular
     .module('app')
