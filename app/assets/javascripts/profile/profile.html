@@ -1,2 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div id="user-profile" class="user-banner">
+    </div>
+  </div>
+</div>
+
 <div ng-include="'nav/navbar.html'"></div>
 <div ng-include="'nav/usernav.html'"></div>
+<div id="profile-bar" class="navbar">
+  <h1>{{ username }}'s Profile</h1>
+</div>
+
+  <tabs>
+    <pane  title="My Clubs">
+      <clubs></clubs>
+    </pane>
+    <pane  title="Add a Book">
+      <book></book>
+    </pane>
+    <pane  title="Bio"></pane>
+    <pane  title="Edit Profile"></pane>
+  </tabs>
