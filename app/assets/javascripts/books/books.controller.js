@@ -1,20 +1,23 @@
-
 (function() { 
   'use strict';
 
-  function BooksController($scope, $stateParams, BookFactory) {
-    $scope.bookResults = [];
-    $scope.searchTerm = $stateParams.query;
+  function BooksController($scope, $state, $stateParams, BookFactory) {
 
-    $scope.getBooks = function () {
-      BookFactory.get({ q: $scope.searchTerm }, function (response) {
-        $scope.bookResults = response.items;
-        $scope.orderProp = 'volumeInfo.title';
+    var vm = this;
+
+    vm.bookResults = [];
+    vm.searchTerm = $stateParams.searchTerm;
+
+    function getBooks() {
+      return BookFactory.getBooks(vm.searchTerm)
+        .then(function (response) {
+        vm.bookResults = response;
+        vm.orderProp = 'volumeInfo.title';
       });
     }
   };
 
-  BooksController.$inject = ['$scope', '$stateParams', 'BookFactory']
+  BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookFactory']
 
 angular
   .module('app')

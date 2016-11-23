@@ -23,7 +23,7 @@
 
   <table id="resultsTbl" class="table table-striped">
     <tbody>
-      <tr ng-repeat="item in books | orderBy:orderProp">
+      <tr ng-repeat="item in bookResults | orderBy:orderProp">
         <td><a ng-href="{{item.volumeInfo.infoLink}}" target="_blank"><img ng-src=
           "{{item.volumeInfo.imageLinks.smallThumbnail}}" /></a></td>
         <td>{{item.volumeInfo.title}}<br />
