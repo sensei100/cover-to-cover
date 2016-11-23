@@ -1,0 +1,9 @@
+<div class="sidebar-left">
+  <div>
+  <div ng-repeat="pane in $ctrl.panes" ng-class="{active: pane.selected}">
+    <a class="profile-links" href="" ng-click="$ctrl.select(pane)">{{ pane.title }} </a>
+  </div>
+  </div>
+</div>
+
+<div class="main" ng-transclude></div>
