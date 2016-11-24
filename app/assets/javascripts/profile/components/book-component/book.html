@@ -6,12 +6,12 @@
           <label>Review:</label>
           <textarea ng-model="$ctrl.book.review" name="review" required="required" ></textarea>
         </div>
-        <div class="form-error" ng-if="form.name.$touched && form.review.$error.required"> You must write a review!
-    </div>
+        <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must write a review!
+        </div>
 
         <div class="input-group">
           <label>Rating:</label>
-          <select id="rating" value="5" ng-model="$ctrl.book.rating" required="required">
+          <select id="rating" name="rating" value="5" ng-model="$ctrl.book.rating" required="required">
             <option>5</option>
             <option>4</option>
             <option>3</option>
@@ -20,7 +20,7 @@
           </select>
         </div>
         <div class="form-error" ng-if="form.rating.$touched && form.rating.$error.required"> Rating is required!
-    </div>
+        </div>
 
         <input id="submit-review" class="btn btn-primary" type="submit" value="Add Book Review">
       </form>
