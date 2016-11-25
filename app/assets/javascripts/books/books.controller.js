@@ -1,22 +1,21 @@
 (function() { 
   'use strict';
 
-  function BooksController($scope, BookFactory) {
-    var ctrl = this;
-    ctrl.items = [];
+  function BooksController($scope, BookService) {
+   
     $scope.searchTerm = "";
 
     
-    BookFactory
-      .getBooks($scope.searchTerm)
+    BookService
+      .getBooks()
       .then(function (response) {
         console.log(response);
-        return ctrl.items = response.data;
+        $scope.items = response.data.items;
         
       });
   };
 
-  BooksController.$inject = ['$scope', 'BookFactory']
+  BooksController.$inject = ['$scope', 'BookService']
 
 angular
   .module('app')
