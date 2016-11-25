@@ -6,7 +6,7 @@
 
 <div class="book-search-box">
     <h3 class="book-title">Looking for a new book?</h3>
-    <form>
+    <form id="book-search-form">
       <label class="book-search-label">Book Search:</label>
       <input id="book-input" ng-model="searchTerm" type="text" name="book-search"><br><br>
             
@@ -14,16 +14,13 @@
     </form>
   </div>
 
-  <table id="resultsTbl" class="table table-striped">
-    <tbody>
-      <tr ng-repeat="item in items">
-        <td><a ng-href="{{item.volumeInfo.infoLink}}" target="_blank"><img ng-src=
-          "{{item.volumeInfo.imageLinks.smallThumbnail}}" /></a></td>
-        <td>{{item.volumeInfo.title}}<br />
-          By: {{item.volumeInfo.authors}}<br />
-          Published: {{item.volumeInfo.publisher}}, {{item.volumeInfo.publishedDate}}
-        </td>
-       </tr>
-    </tbody>
-  </table>
+  <div class="card" ng-repeat="item in items">
+  <img class="card-img-top" ng-src="{{item.volumeInfo.imageLinks.smallThumbnail}}" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">{{item.volumeInfo.title}}</h4>
+    <h5 class="card-subtitle">By: {{item.volumeInfo.authors[0]}}</h5>
+    <p class="card-text">Published: {{item.volumeInfo.publisher}}, {{item.volumeInfo.publishedDate}}</p>
+    <a href="#" class="btn btn-primary">Read More</a>
+  </div>
+</div>
 </div>

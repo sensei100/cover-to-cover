@@ -7,9 +7,9 @@
 
     
     BookService
-      .getBooks()
+      .getBooks($scope.searchTerm)
       .then(function (response) {
-        console.log(response);
+        console.log(response.data.items);
         $scope.items = response.data.items;
         
       });
