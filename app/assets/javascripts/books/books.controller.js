@@ -3,6 +3,7 @@
 
   function BooksController($scope, BookFactory) {
     var ctrl = this;
+    ctrl.items = [];
     $scope.searchTerm = "";
 
     
@@ -10,7 +11,7 @@
       .getBooks($scope.searchTerm)
       .then(function (response) {
         console.log(response);
-        ctrl.books = response;
+        return ctrl.items = response.data;
         
       });
   };

@@ -10,11 +10,6 @@
     <form>
       <label class="book-search-label">Book Search:</label>
       <input id="book-input" ng-model="searchTerm" type="text" name="book-search"><br><br>
-      <label class="book-search-label">Sort by:</label>
-        <select id="option" ng-model="orderProp">
-          <option value="volumeInfo.authors">Alphabetical by Author</option>
-          <option selected="selected" value="volumeInfo.title">Alphabetical by Title</option>
-        </select>
             
       <input class="btn book-submit" ng-click="getBooks()" type="submit" value="Find Books">
     </form>
@@ -22,13 +17,12 @@
 
   <table id="resultsTbl" class="table table-striped">
     <tbody>
-      <tr ng-repeat="item in books">
+      <tr ng-repeat="item in items">
         <td><a ng-href="{{item.volumeInfo.infoLink}}" target="_blank"><img ng-src=
           "{{item.volumeInfo.imageLinks.smallThumbnail}}" /></a></td>
         <td>{{item.volumeInfo.title}}<br />
-          By: {{item.volumeInfo.authors | formatFilter}}<br />
-          Published: {{item.volumeInfo.publisher}}, {{item.volumeInfo.publishedDate |
-         dateFilter}}
+          By: {{item.volumeInfo.authors}}<br />
+          Published: {{item.volumeInfo.publisher}}, {{item.volumeInfo.publishedDate}}
         </td>
        </tr>
     </tbody>
