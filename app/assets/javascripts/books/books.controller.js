@@ -1,11 +1,27 @@
 (function() { 
   'use strict';
 
-  function BooksController($scope, BookService) {
+  function BooksController($scope, BookService, Auth) {
 
     var ctrl = this;
-   
+    ctrl.signedIn = Auth.isAuthenticated();
     $scope.searchTerm = '';
+
+    activate();
+
+    function activate() {
+      getCurrentUser();
+    }
+
+    function getCurrentUser() {
+      return Auth.currentUser()
+        .then(setCurrentUser);
+        }
+
+        function setCurrentUser(user) {
+          console.log(user);
+            return ctrl.user = user;
+        }
 
     
     BookService
@@ -18,7 +34,7 @@
       });
   };
 
-  BooksController.$inject = ['$scope', 'BookService']
+  BooksController.$inject = ['$scope', 'BookService', 'Auth']
 
 angular
   .module('app')
