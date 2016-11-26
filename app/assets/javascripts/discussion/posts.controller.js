@@ -2,7 +2,20 @@
   'use strict';
 
   function PostsController($scope) {
-    $scope.name = "test"
+    $scope.posts = [
+    'post 1',
+    'post 2',
+    'post 3',
+    'post 4',
+    'post 5',
+    ];
+
+    $scope.addPost = function() {
+      $scope.posts.push({
+        content: $scope.content
+      });
+      $scope.content = '';
+    };
   }
 
   PostsController.$inject = ['$scope']
