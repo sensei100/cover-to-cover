@@ -5,11 +5,11 @@
   function BookService($http) {
 
   this.getBooks = function (query) {
-    return $http.get('https://www.googleapis.com/books/v1/volumes?q=' + query)
+    return $http.get('https://www.googleapis.com/books/v1/volumes?q=friendship bread' + query)
     }
   
-  this.bookDetails = function (volumeId) {
-    return $http.get('https://www.googleapis.com/books/v1/volumes/' + volumeId)
+  this.bookDetails = function () {
+    return $http.get('https://www.googleapis.com/books/v1/volumes/HgusS4sGYbsC')
     }
   }
 

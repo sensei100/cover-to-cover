@@ -12,9 +12,6 @@
 
     function activate() {
       getCurrentUser();
-        if (!!$stateParams.id) {
-          bookDetails();
-        }
     }
 
     function getCurrentUser() {
@@ -37,14 +34,13 @@
         
       });
 
-      function bookDetails() {
-      return BookService.bookDetails($stateParams.id)
-        .then(setClub)
-    }
-
-    function setClub(data) {
-       ctrl.book = data;
-    }
+    BookService
+      .bookDetails()
+      .then(function (response) {
+        console.log(response.data.volumeInfo);
+        $scope.item = response.data.volumeInfo;
+      });
+    
   };
 
   BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookService', 'Auth']
