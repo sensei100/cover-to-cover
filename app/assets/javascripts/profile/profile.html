@@ -7,8 +7,8 @@
 
 <div ng-include="'nav/navbar.html'"></div>
 <div ng-include="'nav/usernav.html'"></div>
-<div id="profile-bar" class="navbar">
-  <h1>{{ user.username }}'s Profile</h1>
+<div id="profile-bar" class="navbar" ng-controller="ProfileController as vm">
+  <h1>{{ vm.user.username }}'s Profile</h1>
 </div>
 
 
