@@ -17,6 +17,11 @@
           templateUrl: 'books/books.html',
           controller: 'BooksController as vm'
         })
+         .state('home.books.book', {
+          url: '/:id',
+          templateUrl: 'books/book.html',
+          controller: 'BooksController as vm'
+        })
          .state('home.discussion', {
           url: 'discussion',
           templateUrl: 'discussion/posts.html',
