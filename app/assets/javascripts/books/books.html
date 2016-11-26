@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="BooksController">
+<div class="container-fluid" ng-controller="BooksController as vm">
   <div class="row">
     <div id="user-profile" class="books-banner">
     </div>
@@ -6,15 +6,15 @@
 
 <div class="book-search-box">
     <h3 class="book-title">Looking for a new book?</h3>
-    <form id="book-search-form">
+    <form id="book-search-form" ng-submit="vm.getBooks(vm.searchTerm)">
       <label class="book-search-label">Book Search:</label>
-      <input id="book-input" ng-model="searchTerm" type="text" name="book-search"><br><br>
+      <input id="book-input" ng-model="vm.searchTerm" type="text" name="book-search"><br><br>
             
-      <input class="btn book-submit" ng-click="getBooks()" type="submit" value="Find Books">
+      <input class="btn book-submit" ng-click="vm.getBooks()" type="submit" value="Find Books">
     </form>
   </div>
 
-  <div class="card" ng-repeat="item in items">
+  <div class="card col-md-5" ng-repeat="item in items">
   <img class="card-img-top" ng-src="{{item.volumeInfo.imageLinks.smallThumbnail}}" alt="Card image cap">
   <div class="card-block">
     <h4 class="card-title">{{item.volumeInfo.title}}</h4>

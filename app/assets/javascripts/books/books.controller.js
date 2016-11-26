@@ -2,13 +2,16 @@
   'use strict';
 
   function BooksController($scope, BookService) {
+
+    var ctrl = this;
    
-    $scope.searchTerm = "";
+    $scope.searchTerm = '';
 
     
     BookService
-      .getBooks($scope.searchTerm)
+      .getBooks({ q: $scope.searchTerm })
       .then(function (response) {
+        $scope.searchTerm = BookService.query = response.q;
         console.log(response.data.items);
         $scope.items = response.data.items;
         

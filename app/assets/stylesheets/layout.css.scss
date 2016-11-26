@@ -250,12 +250,13 @@ textarea {
   border: 1px solid #0375B4;
   padding: 20px;
   width: 400px;
-  margin-bottom: 20px;
+  height: 350px;
   font-family: 'Raleway', cursive;
   text-align: center;
-  margin: 50px auto;
+  margin: 20px;
   background: #ececec;
   color: #262228;
+  box-shadow: 0 2px 1px -1px;
   }
 
 #book-search-form {

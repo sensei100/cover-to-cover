@@ -4,8 +4,8 @@
 
   function BookService($http) {
 
-  this.getBooks = function () {
-    return $http.get('https://www.googleapis.com/books/v1/volumes?q=gardens')
+  this.getBooks = function (query) {
+    return $http.get('https://www.googleapis.com/books/v1/volumes?q=' + query)
 
     }
   }
