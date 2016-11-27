@@ -25,13 +25,9 @@
     }
 
     function createPost() {
-      if (vm.signedIn) {
       return PostFactory.createPost(vm.post)
         .then(showPost)
-      } else {
-        alert("You need to be signed in to post.")
-        $state.go('home.login')
-        }
+      
       }
 
     function showPost(data) {

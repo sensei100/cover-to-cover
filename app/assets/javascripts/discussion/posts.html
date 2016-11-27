@@ -2,6 +2,8 @@
 
 <div>
   <form name="form" ng-controller="PostsController as vm" id="create-post" ng-submit="vm.createPost()">
+
+    <input type="hidden" id="id" name="id" data-ng-model="user.id" />
     
     <label for="name">Add a Post:</label>
     <input ng-model="vm.post.content" type="text" name="content" required="required"></br></br>
