@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function PostFactory($http, $stateParams) {
+  function PostFactory($http) {
 
     return {
       getPosts: getPosts,
@@ -15,14 +15,15 @@
 
     function getPosts() {
       return $http.get('/posts')
-        .then(handleResponse)
+        .then(handleSuccess)
         .catch(handleError)
     }
 
     function createPost(post) {
+      
       var req = {
         method: 'POST',
-        url: '/discussion',
+        url: '/posts',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -32,12 +33,13 @@
       };
 
         return $http(req)
-          .catch(handleError);
+        .then(handleSuccess)
+        .catch(handleError);
         }
 
     function getPost(id) {
-      return $http.get('posts/' + $stateParams.id)
-        .then(handleResponse)
+      return $http.get('/posts/' + id)
+        .then(handleSuccess)
         .catch(handleError);
     }
 
@@ -53,7 +55,7 @@
 
     }
     
-    function handleResponse(response) {
+    function handleSuccess(response) {
       console.log(response)
       return response.data
     }
@@ -64,7 +66,7 @@
 
   }
 
-  PostFactory.$inject = ['$http', '$stateParams']
+  PostFactory.$inject = ['$http']
 
   angular
     .module('app')

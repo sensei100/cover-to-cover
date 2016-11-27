@@ -23,7 +23,7 @@
           controller: 'BooksController as vm'
         })
          .state('home.discussion', {
-          url: 'discussion',
+          url: 'posts',
           templateUrl: 'discussion/posts.html',
           controller: 'PostsController as vm'
         })
