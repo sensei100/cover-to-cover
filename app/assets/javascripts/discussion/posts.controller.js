@@ -1,17 +1,38 @@
 (function() { 
   'use strict';
 
-  function PostsController($scope) {
+  function PostsController($state, PostFactory, Auth) {
+    var vm = this;
 
-    $scope.addPost = function() {
-      $scope.posts.push({
-        content: $scope.content
-      });
-      $scope.content = '';
-    };
-  }
+    vm.getPosts = getPosts;
+    vm.createPost = createPost;
+    
 
-  PostsController.$inject = ['$scope']
+    activate();
+
+    function activate() {
+      getPosts()
+    }
+
+    function getPosts() {
+      return PostFactory.getPosts()
+                        .then(setPosts)
+
+      function setPosts(data) {
+        vm.posts = data;
+      }                
+    }
+
+    function createPost() {
+      return PostFactory.createPost(ctrl.post)
+        .then(function() {
+          $state.go('home.discussion')
+        })
+    }
+
+  };
+
+  PostsController.$inject = ['$state', 'PostFactory', 'Auth']
 
 angular
   .module('app')

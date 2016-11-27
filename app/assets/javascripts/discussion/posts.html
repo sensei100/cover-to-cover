@@ -2,7 +2,20 @@
   {{post}}
 </div>
 
-<create-post></create-post>
+<h4 class="discussion-headline">Talk about your latest reads here.</h4>
+
+<div>
+  <form name="form" id="create-post" ng-submit="createPost()">
+    
+    <label for="name">Add a Post:</label>
+    <input ng-model="post.content" type="text" name="content" required="required"></br></br>
+
+    <div class="form-error" ng-if="form.content.$touched && form.content.$error.required"> Content is required!
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Add Post">
+  </form>
+</div>
 
 <div class="card col-md-5" ng-repeat="post in posts">
   <div class="card-block">

@@ -4,16 +4,10 @@
 
   function PostFactory($http, $stateParams) {
 
-    var o = {
-      posts: []
-    };
-
-    return o;
-    
     return {
       getPosts: getPosts,
       getPost: getPost,
-      // getUserPost: getUserPosts,
+      //getUserPost: getUserPosts,
       createPost: createPost,
       updatePost: updatePost,
       deletePost: deletePost,
