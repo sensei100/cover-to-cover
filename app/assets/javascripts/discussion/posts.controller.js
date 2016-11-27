@@ -11,7 +11,7 @@
     activate();
 
     function activate() {
-      getPosts()
+      getPosts();
     }
 
     function getPosts() {
@@ -19,12 +19,12 @@
                         .then(setPosts)
 
       function setPosts(data) {
-        vm.posts = data;
+        return vm.posts = data;
       }                
     }
 
     function createPost() {
-      return PostFactory.createPost(ctrl.post)
+      return PostFactory.createPost(vm.post)
         .then(function() {
           $state.go('home.discussion')
         })

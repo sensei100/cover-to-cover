@@ -22,7 +22,7 @@
     function createPost(post) {
       var req = {
         method: 'POST',
-        url: '/posts',
+        url: '/discussion',
         headers: {
           'Content-Type': 'application/json'
         },
