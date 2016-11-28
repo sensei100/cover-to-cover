@@ -3,7 +3,7 @@
 
   function PostsController($scope, $state, PostFactory, Auth) {
     var vm = this;
-    $scope.posts = [];
+    $scope.posts = PostFactory.posts;
   
     vm.getPosts = getPosts;
     vm.createPost = createPost;
@@ -33,6 +33,7 @@
       }
 
     function showPost(data) {
+      $scope.posts.push(data);
       $state.go('home.discussion')
     }
 
