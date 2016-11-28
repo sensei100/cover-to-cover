@@ -290,6 +290,33 @@ textarea {
   text-align: center;
 }
 
+.post-card {
+  border: 1px solid #0375B4;
+  padding: 20px;
+  height: auto;
+  font-family: 'Raleway', cursive;
+  text-align: left;
+  margin: 20px;
+  background: #D6FBC5;
+  color: #262228;
+  box-shadow: 0 2px 1px -1px;
+}
+
+.card-content {
+  font-family: 'Raleway', cursive;
+  font-size: 1.3em;
+}
+
+.glyphicon-comment {
+  color: #007849 ;
+  margin-right: 10px;
+}
+
+.card-user {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
 
 
 
