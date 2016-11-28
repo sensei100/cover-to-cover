@@ -21,6 +21,7 @@
   <div class="card-block">
     <h4 class="card-user"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ post.user.username }}</h4>
     <p class="card-content">{{ post.content }}</p>
+    <p class="card-datetime">Written on: {{post.created_at | date: 'mediumDate'}}</p>
     
   </div>
 </div>
