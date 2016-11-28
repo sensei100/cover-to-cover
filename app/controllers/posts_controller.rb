@@ -1,3 +1,5 @@
+require 'pry'
+
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
@@ -12,7 +14,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(post_params)
+    binding.pry
+    post = current_user.posts.new(post_params)
     if post.save
       render json: { status: 'ok' }
     else
