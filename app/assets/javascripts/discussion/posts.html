@@ -1,4 +1,6 @@
-<h4 class="discussion-headline">Talk about your latest reads here.</h4>
+<div class="discussion-heading">
+  <h4 class="discussion-headline">Talk about your latest reads here.</h4>
+</div>
 
 <div>
   <form name="form" ng-controller="PostsController as vm" id="create-post" ng-submit="vm.createPost()">
@@ -15,10 +17,10 @@
   </form>
 </div>
 
-<div class="card col-md-5" ng-repeat="post in data.posts">
+<div class="card col-md-5" ng-repeat="post in posts">
   <div class="card-block">
-    <h4 class="card-user">{{ data.post.user.username }}</h4>
-    <p class="card-content">{{ data.post.content }}</p>
+    <h4 class="card-user">{{ post.user.username }}</h4>
+    <p class="card-content">{{ post.content }}</p>
     
   </div>
 </div>

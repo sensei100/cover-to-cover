@@ -3,6 +3,7 @@
 
   function PostsController($scope, $state, PostFactory, Auth) {
     var vm = this;
+    $scope.posts = [];
   
     vm.getPosts = getPosts;
     vm.createPost = createPost;
@@ -21,7 +22,7 @@
     };
 
     function setPosts(data) {
-      return vm.posts = data;                
+      return $scope.posts = data;                
     }
 
     function createPost() {
