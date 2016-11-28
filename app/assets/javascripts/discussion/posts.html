@@ -17,7 +17,15 @@
   </form>
 </div>
 
-<div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in posts">
+<label>
+  Sort by: 
+    <select id="option" ng-model="orderProp">
+      <option value="post.user.username">Alphabetical by Author</option>
+      <option selected="selected" value="post.created_at">by Date</option>
+    </select>
+</label>
+
+<div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in posts | orderBy: orderProp">
   <div class="card-block">
     <h4 class="card-user"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ post.user.username }}</h4>
     <p class="card-content">{{ post.content }}</p>

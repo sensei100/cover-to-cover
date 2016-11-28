@@ -22,7 +22,8 @@
     };
 
     function setPosts(data) {
-      return $scope.posts = data;                
+      return $scope.posts = data; 
+      $scope.orderProp = 'posts.created_at';              
     }
 
     function createPost() {
