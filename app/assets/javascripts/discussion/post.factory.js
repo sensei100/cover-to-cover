@@ -38,6 +38,7 @@
         }
 
     function getPost(id) {
+      debugger;
       return $http.get('/posts/' + id)
         .then(handleSuccess)
         .catch(handleError);

@@ -13,7 +13,7 @@
 
         //defined methods on the vm        
         function activate() {
-          getPost($stateParams.postId);
+          getPost($stateParams.id);
           getCurrentUser();
         };
 

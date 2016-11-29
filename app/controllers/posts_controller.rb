@@ -8,20 +8,7 @@ class PostsController < ApplicationController
 
   def show
     post = Post.find(params[:id])
-    render json: {
-        status: 'ok',
-        post: {
-          id: post.id,
-          content: post.content,
-          user_id: post.user_id,
-          user: {
-            id: post.user.id,
-            username: post.user.username,
-            email: post.user.email
-          },
-          created_at: post.created_at
-        }
-      }
+    render json: post
   end
 
   def create
