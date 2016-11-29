@@ -27,15 +27,14 @@
     }
 
     function createPost() {
+      vm.posts.push(vm.post);
       return PostFactory.createPost(vm.post)
-      vm.posts.push(data.post)
         .then(showPost)
       
       }
 
     function showPost(data) {
-      vm.posts.push(vm.post);
-      $state.go('home.discussion')
+      vm.getPosts;
     }
 
   };
