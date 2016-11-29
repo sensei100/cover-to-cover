@@ -3,7 +3,7 @@
 
   function PostsController($scope, $state, PostFactory, Auth) {
     var vm = this;
-    $scope.posts = PostFactory.posts;
+    vm.posts = PostFactory.posts;
   
     vm.getPosts = getPosts;
     vm.createPost = createPost;
@@ -22,18 +22,19 @@
     };
 
     function setPosts(data) {
-      return $scope.posts = data; 
+      vm.posts = data; 
       $scope.orderProp = 'posts.created_at';              
     }
 
     function createPost() {
       return PostFactory.createPost(vm.post)
+      vm.posts.push(data.post)
         .then(showPost)
       
       }
 
     function showPost(data) {
-      $scope.posts.push(data);
+      vm.posts.push(vm.post);
       $state.go('home.discussion')
     }
 

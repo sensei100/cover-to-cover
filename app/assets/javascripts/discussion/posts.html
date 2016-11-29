@@ -5,7 +5,7 @@
 <div>
   <form name="form" ng-controller="PostsController as vm" id="create-post" ng-submit="vm.createPost()">
 
-    <input type="hidden" id="id" name="id" data-ng-model="current_user.id" />
+    <input type="hidden" id="id" name="id" data-ng-model="vm.current_user.id" />
     
     <label for="name">Add a Post:</label>
     <input ng-model="vm.post.content" type="text" name="content" required="required"></br></br>
@@ -19,13 +19,13 @@
 
 <label>
   Sort by: 
-    <select id="option" ng-model="orderProp">
+    <select id="option" ng-model="vm.orderProp">
       <option value="post.user.username">Alphabetical by Author</option>
       <option selected="selected" value="post.created_at">by Date</option>
     </select>
 </label>
 
-<div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in posts | orderBy: orderProp">
+<div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in vm.posts | orderBy: orderProp">
   <div class="card-block">
     <h4 class="card-user"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ post.user.username }}</h4>
     <p class="card-content">{{ post.content }}</p>
