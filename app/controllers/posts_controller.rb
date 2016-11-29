@@ -13,8 +13,21 @@ class PostsController < ApplicationController
 
   def create
     post = current_user.posts.new(post_params)
-    if post.save
-      render json: { status: 'ok' }
+   if post.save
+      render json: {
+        status: 'ok',
+        post: {
+          id: post.id,
+          content: post.content,
+          user_id: post.user_id,
+          user: {
+            id: post.user.id,
+            username: post.user.username,
+            email: post.user.email
+          },
+          created_at: post.created_at
+        }
+      }
     else
       render json: 
       { errors: post.errors.full_messages },
@@ -25,7 +38,20 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     if post.update(post_params)
-      render json: { status: 'ok' }
+     render json: {
+        status: 'ok',
+        post: {
+          id: post.id,
+          content: post.content,
+          user_id: post.user_id,
+          user: {
+            id: post.user.id,
+            username: post.user.username,
+            email: post.user.email
+          },
+          created_at: post.created_at
+        }
+      }
     else
       render json: 
       { errors: post.errors.full_messages },
