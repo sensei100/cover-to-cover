@@ -24,6 +24,11 @@
         })
          .state('home.discussion', {
           url: 'discussion',
+          templateUrl: 'discussion/post.html',
+          controller: 'PostsController as vm'
+        })
+          .state('home.discussion.post', {
+          url: '/:id',
           templateUrl: 'discussion/posts.html',
           controller: 'PostsController as vm'
         })
