@@ -30,7 +30,7 @@
           .state('home.discussion.post', {
           url: '/:id',
           templateUrl: 'discussion/posts.html',
-          controller: 'PostsController as vm'
+          controller: 'PostsShowController as vm'
         })
           .state('about', {
           url: '/about',
