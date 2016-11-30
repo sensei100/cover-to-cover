@@ -38,12 +38,16 @@
                        .then(showPost);
             } else {
                 alert("You cannot edit someone else's post.");
-    }
+            }
         };
 
         function destroyPost(id) {
-            return PostFactory.destroyPost(id)
+            if (vm.post.user_id === vm.user.id) {
+                return PostFactory.destroyPost(id)
                        .then(showPosts);
+            } else {
+                alert("You cannot delete someone else's post.");
+            }
         };
 
         function setPost(data) {
