@@ -10,7 +10,7 @@
       //getUserPost: getUserPosts,
       createPost: createPost,
       updatePost: updatePost,
-      deletePost: deletePost,
+      destroyPost: destroyPost,
     }
 
     function getPosts() {
@@ -63,7 +63,10 @@
         .catch(handleError);
     }
 
-    function deletePost() {
+    function destroyPost(id) {
+      return $http.delete('/posts/' + id)
+        .then(handleSuccess)
+        .catch(handleError); 
 
     }
     
@@ -74,10 +77,6 @@
 
     function handleError(error) {
       console.log(error) 
-    }
-
-    function showPosts() {
-      $state.go('home.discussion');
     }
 
   }

@@ -61,15 +61,7 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    if post.user == current_user.id
-      if post.destroy 
-        render json: { status: 'ok' }
-      else
-      render json: 
-        { errors: post.errors.full_messages },
-        status: :unprocessable_entity
-      end
-    end
+        @post.destroy
   end
 
   private
