@@ -60,8 +60,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-        @post.destroy
+    if current_user
+      post = Post.find(params[:id])
+        if post.destroy
+          render json: { status: 201 }
+        else
+          render json: { errors: post.errors.full_messages },
+          status: 422
+        end
+      end
   end
 
   private
