@@ -9,7 +9,7 @@
     vm.createPost = createPost;
     vm.signedIn = Auth.isAuthenticated();
     
-
+    console.log(Auth.isAuthenticated()); 
     activate();
 
     function activate() {
@@ -33,7 +33,7 @@
       }
 
     function showPost(data) {
-      vm.posts.push(data.post)
+      vm.posts.push(data)
     }
 
   };

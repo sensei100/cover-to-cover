@@ -33,8 +33,12 @@
         };
 
         function updatePost() {
-            return PostFactory.updatePost(vm.post)
+            if (vm.post.user_id === vm.user.id) {
+                return PostFactory.updatePost(vm.post)
                        .then(showPost);
+            } else {
+                alert("You cannot edit someone else's post.");
+    }
         };
 
         function destroyPost(id) {
