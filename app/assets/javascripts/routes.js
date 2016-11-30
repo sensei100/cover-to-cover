@@ -28,10 +28,16 @@
           controller: 'PostsController as vm'
         })
           .state('home.post', {
-          url: ':id',
+          url: 'discussion/:id',
           templateUrl: 'discussion/post.html',
           controller: 'PostsShowController as vm'
         })
+          .state('home.edit', {
+          url: 'discussion/:id/edit',
+          templateUrl: 'discussion/edit.html',
+          controller: 'PostsShowController as vm'
+        })
+
           .state('about', {
           url: '/about',
           templateUrl: 'about/about.html',

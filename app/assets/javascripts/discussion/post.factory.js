@@ -38,7 +38,6 @@
         }
 
     function getPost(id) {
-      debugger;
       return $http.get('/posts/' + id)
         .then(handleSuccess)
         .catch(handleError);
@@ -49,7 +48,10 @@
     }
 
     function updatePost() {
-
+      if (vm.signedIn) {
+        return PostFactory.updatePost(vm.post)
+          .then(showPosts);
+      }
     }
 
     function deletePost() {
@@ -63,6 +65,10 @@
 
     function handleError(error) {
       console.log(error) 
+    }
+
+    function showPosts() {
+      $state.go('home.discussion');
     }
 
   }

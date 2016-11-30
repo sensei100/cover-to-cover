@@ -2,5 +2,6 @@
   <div class="card-block">
     <h4 class="card-user"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ vm.post.user.username }}</h4>
     <p class="card-content">{{ vm.post.content }}</p>
+    <a href="" ui-sref="home.edit({ id: vm.post.id })"><button type="button" class="btn btn-warning">Edit Post</button></a>
     <p class="card-datetime">Written on: {{ vm.post.created_at | date: 'mediumDate'}}</p>  
   </div>
