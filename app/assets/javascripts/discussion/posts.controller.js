@@ -33,7 +33,7 @@
       }
 
     function showPost(data) {
-      vm.posts.push(data)
+      vm.posts.push(data.post)
     }
 
   };
