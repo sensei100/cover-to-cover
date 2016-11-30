@@ -47,11 +47,20 @@
 
     }
 
-    function updatePost() {
-      if (vm.signedIn) {
-        return PostFactory.updatePost(vm.post)
-          .then(showPosts);
+    function updatePost(post) {
+      var req = {
+        method: 'PATCH',
+        url: '/posts/' + post.id,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          post: post
+        }
       }
+      return $http(req)
+        .then(handleSuccess)
+        .catch(handleError);
     }
 
     function deletePost() {

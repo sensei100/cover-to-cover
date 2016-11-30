@@ -33,13 +33,8 @@
         };
 
         function updatePost() {
-            if (vm.signedIn && vm.currentUser) {
-                return PostFactory.updatePost(vm.post)
+            return PostFactory.updatePost(vm.post)
                        .then(showPost);
-            } else {
-                alert("You need to sign in to edit a Post.");
-                $state.go('home.login')
-            }
         };
 
         function destroyPost(id) {
@@ -51,8 +46,8 @@
             return vm.post = data;
         };
 
-        function showPost(data) {
-            $state.go('home.discussion.post', { postId: data.id });
+        function showPost(id) {
+            $state.go('home.post', { id: post.id });
         };
 
         function showPosts() {

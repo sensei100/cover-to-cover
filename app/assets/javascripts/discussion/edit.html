@@ -1,0 +1,14 @@
+<div>
+  <form name="form" id="create-post" ng-submit="vm.updatePost()">
+
+    <input type="hidden" id="id" name="id" data-ng-model="vm.post.id" />
+    
+    <label for="name">Edit Post:</label>
+    <input ng-model="vm.post.content" type="text" name="content" required="required"></br></br>
+
+    <div class="form-error" ng-if="form.content.$touched && form.content.$error.required"> Content is required!
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Edit Post">
+  </form>
+</div>
