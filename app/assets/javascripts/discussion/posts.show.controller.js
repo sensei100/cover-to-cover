@@ -46,8 +46,8 @@
             return vm.post = data;
         };
 
-        function showPost(id) {
-            $state.go('home.post', { id: post.id });
+        function showPost(data) {
+            $state.go('home.post', { id: vm.post.id });
         };
 
         function showPosts() {
