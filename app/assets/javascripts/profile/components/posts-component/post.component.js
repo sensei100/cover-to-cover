@@ -14,12 +14,20 @@
     var ctrl = this;
 
     ctrl.getPosts = getPosts;
+
+    activate();
+
+    function activate() {
+      getPosts();
+    };
   
-  function getPosts() {
-    return PostFactory.getPosts()
-        .then(function() {
-          $state.go('profile')
-        })
+    function getPosts() {
+      return PostFactory.getPosts()
+          .then(setPosts)
+    };
+
+    function setPosts(data) {
+      ctrl.posts = data;              
     }
   }
 

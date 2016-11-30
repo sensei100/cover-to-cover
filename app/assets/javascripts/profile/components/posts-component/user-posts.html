@@ -1,6 +1,6 @@
 <h1>test</h1>
 
-<a href="#" ui-sref="home.post({id: post.id})"><div class="post-card col-md-9 col-md-offset-1" ng-init="$ctrl.getUserPosts()" ng-repeat="post in $ctrl.user.posts | orderBy: orderProp">
+<a href="#" ui-sref="home.post({id: post.id})"><div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in $ctrl.posts | orderBy: orderProp">
   <div class="card-block">
     <h4 class="card-user"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ post.user.username }}</h4>
     <p class="card-content">{{ post.content }}</p>
