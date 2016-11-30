@@ -43,10 +43,6 @@
         .catch(handleError);
     }
 
-    function getUserPost() {
-
-    }
-
     function updatePost(post) {
       var req = {
         method: 'PATCH',
