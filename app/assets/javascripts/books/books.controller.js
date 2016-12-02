@@ -8,7 +8,7 @@
     vm.searchTerm = '';
     $scope.$state = $state;
 
-    $scope.$back = function() { 
+    $scope.goBack = function() { 
       window.history.back();
     };
 
