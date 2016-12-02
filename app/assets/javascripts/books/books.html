@@ -6,7 +6,7 @@
 
   <ui-view></ui-view>
 
-<div class="book-search-box">
+<div class="book-search-box" ng-hide="$state.includes('home.books.book')">
     <h3 class="book-title">Looking for a new book?</h3>
     <form id="book-search-form" ng-submit="vm.getBooks(vm.searchTerm)">
       <label class="book-search-label">Book Search:</label>
@@ -16,13 +16,13 @@
     </form>
   </div>
 
-  <div class="card col-md-5" ng-repeat="item in items">
+  <div class="card col-md-5" ng-repeat="item in items" ng-hide="$state.includes('home.books.book')">
      <img class="card-img-top" ng-src="{{item.volumeInfo.imageLinks.smallThumbnail}}" alt="Card image cap">
      <div class="card-block">
        <h4 class="card-title">{{item.volumeInfo.title}}</h4>
        <h5 class="card-subtitle">By: {{item.volumeInfo.authors[0]}}</h5>
        <p class="card-text">Published: {{item.volumeInfo.publisher}}, {{item.volumeInfo.publishedDate}}</p>
-       <a href="" ui-sref="home.book({id: item.id})" class="btn btn-primary">Read More</a>
+       <a href="" ui-sref="home.books.book({id: item.id})" class="btn btn-primary">Read More</a>
   </div>
 </div>
 </div>
