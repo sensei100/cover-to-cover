@@ -28,7 +28,7 @@
     BookService
       .getBooks({ q: vm.searchTerm })
       .then(function (response) {
-        $scope.searchTerm = BookService.query = response.q;
+        vm.searchTerm = BookService.query = response.q;
         console.log(response.data.items);
         $scope.items = response.data.items;
         
@@ -38,7 +38,7 @@
       .bookDetails()
       .then(function (response) {
         console.log(response.data.volumeInfo);
-        $scope.item = response.data.volumeInfo;
+        vm.item = response.data.volumeInfo;
       });
     
   };

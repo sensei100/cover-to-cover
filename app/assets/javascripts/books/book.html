@@ -1,8 +1,9 @@
 <div class="detail-card col-md-9" ng-init="vm.bookDetails()" ng-controller="BooksController as vm">
-  <img class="card-img-top" ng-src="{{imageLinks.smallThumbnail}}" alt="Card image cap">
+  <img class="card-img-top" ng-src="{{ vm.item.imageLinks.smallThumbnail }}" alt="Card image cap">
   <div class="card-block">
-    <h4 class="card-title">{{vm.volumeInfo.title}}</h4>
-    <h5 class="card-subtitle">By: {{authors[0]}}</h5>
-    <p class="card-text">Published: {{vm.item.volumeInfo.publisher}}, {{item.volumeInfo.publishedDate}}</p>
+    <h4 class="card-title">{{ vm.item.title }}</h4>
+    <h5 class="card-subtitle">By: {{ vm.item.authors[0] }}</h5>
+    <p class="card-text">Published: {{ vm.item.publisher }}</p>
+    <p class="card-text"> {{ vm.item.publishedDate | date: 'mediumDate' }}</p>
     <a href="" class="btn btn-primary">Add to your Collection</a>
 </div>
