@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="BooksController as vm">
+<div class="container-fluid">
   <div class="row">
     <div id="user-profile" class="books-banner">
     </div>
@@ -6,7 +6,7 @@
 
   <ui-view></ui-view>
 
-<div class="book-search-box" ng-hide="$state.includes('home.books.book')">
+<div class="book-search-box">
     <h3 class="book-title">Looking for a new book?</h3>
     <form id="book-search-form" ng-submit="vm.getBooks(vm.searchTerm)">
       <label class="book-search-label">Book Search:</label>
