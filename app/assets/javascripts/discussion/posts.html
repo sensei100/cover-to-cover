@@ -19,13 +19,12 @@
 
 <label>
   Sort by: 
-    <select id="option" ng-model="vm.orderProp">
-      <option value="post.user.username">Alphabetical by Author</option>
-      <option selected="selected" value="post.created_at">by Date</option>
+    <select id="option" ng-model="sortBy" ng-options="option for option in options">
+      
     </select>
 </label>
 
-<a href="#" ui-sref="home.post({id: post.id})"><div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in vm.posts | orderBy: orderProp">
+<a href="#" ui-sref="home.post({id: post.id})"><div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in vm.posts | orderBy: sortBy">
   <div class="card-block">
     <h4 class="card-user"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ post.user.username }}</h4>
     <p class="card-content">{{ post.content }}</p>

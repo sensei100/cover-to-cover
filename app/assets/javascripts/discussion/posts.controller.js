@@ -4,10 +4,11 @@
   function PostsController($scope, $state, PostFactory, Auth) {
     var vm = this;
     vm.posts;
-  
     vm.getPosts = getPosts;
     vm.createPost = createPost;
     vm.signedIn = Auth.isAuthenticated();
+
+    $scope.options = ['username', 'created_at'];
     
     console.log(Auth.isAuthenticated()); 
     activate();
@@ -23,7 +24,7 @@
 
     function setPosts(data) {
       vm.posts = data; 
-      $scope.orderProp = 'posts.created_at';              
+      $scope.orderProp = 'vm.post.created_at';              
     }
 
     function createPost() {
