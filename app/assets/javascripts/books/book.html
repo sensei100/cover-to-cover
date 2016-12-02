@@ -7,4 +7,5 @@
     <p class="card-text">Published: {{ vm.item.publisher }}</p>
     <p class="card-text"> {{ vm.item.publishedDate | date: 'mediumDate' }}</p>
     <a href="" class="btn btn-primary">Add to your Collection</a>
+    <a href="" ng-click="$back()" class="btn btn-success">Go back to search results</a>
 </div>
