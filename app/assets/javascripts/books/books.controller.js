@@ -24,7 +24,6 @@
             return vm.user = user;
         }
 
-    
     BookService
       .getBooks({ q: vm.searchTerm })
       .then(function (response) {

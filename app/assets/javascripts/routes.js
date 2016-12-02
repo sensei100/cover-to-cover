@@ -18,7 +18,7 @@
           controller: 'BooksController as vm'
         })
          .state('home.book', {
-          url: '/:id',
+          url: ':id',
           templateUrl: 'books/book.html',
           controller: 'BooksController as vm'
         })
