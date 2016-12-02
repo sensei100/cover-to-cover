@@ -3,9 +3,9 @@
 
   function BooksController($scope, $state, $stateParams, BookService, Auth) {
 
-    var ctrl = this;
-    ctrl.signedIn = Auth.isAuthenticated();
-    $scope.searchTerm = '';
+    var vm = this;
+    vm.signedIn = Auth.isAuthenticated();
+    vm.searchTerm = '';
     $scope.$state = $state;
 
     activate();
@@ -21,12 +21,12 @@
 
         function setCurrentUser(user) {
           console.log(user);
-            return ctrl.user = user;
+            return vm.user = user;
         }
 
     
     BookService
-      .getBooks({ q: $scope.searchTerm })
+      .getBooks({ q: vm.searchTerm })
       .then(function (response) {
         $scope.searchTerm = BookService.query = response.q;
         console.log(response.data.items);
