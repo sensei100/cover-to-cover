@@ -6,6 +6,51 @@
     <p id="book-description" class="card-text">Description: {{ vm.item.description }}</p>
     <p class="card-text">Published: {{ vm.item.publisher }}</p>
     <p class="card-text"> {{ vm.item.publishedDate | date: 'mediumDate' }}</p>
-    <a href="" class="btn btn-primary">Add to your Collection</a>
+    <a href="" ng-click="showBookReview = true" class="btn btn-primary">Add a Book Review</a>
     <a href="" ng-click="goBack()" class="btn btn-success">Go back to search results</a>
+</div>
+
+<div id="book-review-container" class="container" ng-show="showBookReview">
+  <div class="row">
+    <div class="col-md-4">
+      <form id="add-book-review" name="form" ng-submit="$ctrl.addBookReview()">  
+        <div class="input-group">
+          <label>Title:</label>
+          <input type="text" name="title" required="required" value="{{ vm.item.title }}" ></input>
+        </div> 
+        <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must include the title!
+        </div>
+        <div class="input-group">
+          <label>Author:</label>
+          <input type="text" name="author" required="required" value="{{ vm.item.authors[0] }}" ></input>
+        </div>
+        <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must include an author!
+        </div>  
+        <div class="input-group">
+          <label>Review:</label>
+          <textarea ng-model="$ctrl.book.review" name="review" required="required" ></textarea>
+        </div>
+        <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must write a review!
+        </div>
+
+        <div class="input-group">
+          <label>Rating:</label>
+          <select id="rating" name="rating" value="5" ng-model="$ctrl.book.rating" required="required">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        </div>
+        <div class="form-error" ng-if="form.rating.$touched && form.rating.$error.required"> Rating is required!
+        </div>
+
+        <input id="submit-review" class="btn btn-primary" type="submit" value="Add Book Review">
+      </form>
+    </div>
+    <div class="col-md-4">
+      
+    </div>
+  </div>
 </div>
