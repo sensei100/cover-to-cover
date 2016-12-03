@@ -6,6 +6,7 @@
     var vm = this;
     vm.signedIn = Auth.isAuthenticated();
     vm.searchTerm = '';
+    vm.createBookReview = createBookReview;
     $scope.$state = $state;
 
     $scope.goBack = function() { 
@@ -44,11 +45,14 @@
         vm.item = response.data.volumeInfo;
       });
     
-    function addBookReview() {
-    return BookFactory.addBookReview(vm.book)
-        .then(function() {
-          $state.go('home.books')
-        })
+    function createBookReview() {
+      return BookService.createBookReview(vm.bookReview)
+        .then(showBookReview)
+      
+      }
+
+    function showBookReview(data) {
+      vm.bookReviews.push(data.bookReview)
     }
   };
 
