@@ -44,6 +44,12 @@
         vm.item = response.data.volumeInfo;
       });
     
+    function addBookReview() {
+    return BookFactory.addBookReview(vm.book)
+        .then(function() {
+          $state.go('home.books')
+        })
+    }
   };
 
   BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookService', 'Auth']
