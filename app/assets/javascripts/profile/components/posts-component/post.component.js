@@ -10,7 +10,7 @@
     templateUrl: 'profile/components/posts-component/user-posts.html'
   }
 
-  function PostComponentController(PostFactory, $state) {
+  function PostComponentController(PostFactory, $state, Auth) {
     var ctrl = this;
 
     ctrl.getPosts = getPosts;
@@ -19,6 +19,7 @@
 
     function activate() {
       getPosts();
+      getCurrentUser();
     };
   
     function getPosts() {
@@ -29,6 +30,16 @@
     function setPosts(data) {
       ctrl.posts = data;              
     }
+
+    function getCurrentUser() {
+      return Auth.currentUser()
+        .then(setCurrentUser);
+        }
+
+        function setCurrentUser(user) {
+          console.log(user);
+            return ctrl.user = user;
+        }
   }
 
   angular
