@@ -17,7 +17,8 @@ class BooksController < ApplicationController
         status: 'ok',
         book: {
           id: book.id,
-          title: title,
+          title: book.title,
+          author: book.author,
           review: book.review,
           rating: book.rating,
           book_user_id: current_user.id,
@@ -57,6 +58,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author)
+    params.require(:book).permit(:title, :author, :rating, :review, :book_user_id)
   end
 end
