@@ -15,7 +15,7 @@
     $scope.goBack = function() { 
       window.history.back();
     };
-
+    console.log(Auth.isAuthenticated()); 
     activate();
 
     function activate() {
