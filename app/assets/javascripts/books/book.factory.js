@@ -5,7 +5,14 @@
   function BookFactory($http) {
 
     return {
+      getBooks: getBooks,
       createBook: createBook
+    }
+
+    function getBooks() {
+      return $http.get('/books')
+        .then(handleSuccess)
+        .catch(handleError)
     }
 
     function createBook(book, user) {

@@ -10,7 +10,7 @@
     templateUrl: 'profile/components/book-component/book.html'
   }
 
-  function BookComponentController(BookFactory, $state) {
+  function BookComponentController(BookFactory, $state, Auth) {
     var ctrl = this;
 
     ctrl.getBooks = getBooks;
