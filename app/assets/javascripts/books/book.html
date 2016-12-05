@@ -13,29 +13,29 @@
 <div id="book-review-container" class="container" ng-show="showBookReview">
   <div class="row">
     <div class="col-md-4">
-      <form id="add-book-review" name="form" ng-submit="$ctrl.addBookReview()">  
+      <form id="add-book-review" name="form" ng-submit="vm.createBookReview()">  
         <div class="input-group">
           <label>Title:</label>
-          <input type="text" ng-model="vm.item.title" name="title" required="required" ng-init="vm.item.title=item.title" ></input>
+          <input type="text" ng-model="vm.item.title" name="title" required="required" ng-init="vm.item.title" ></input>
         </div> 
         <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must include the title!
         </div>
         <div class="input-group">
           <label>Author:</label>
-          <input type="text" ng-model="vm.item.authors[0]" name="author" required="required" ng-init="vm.item.authors[0]=item.authors[0]"></input>
+          <input type="text" ng-model="vm.item.authors[0]" name="author" required="required" ng-init="vm.item.authors[0]"></input>
         </div>
         <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must include an author!
         </div>  
         <div class="input-group">
           <label>Review:</label>
-          <textarea ng-model="$ctrl.book.review" name="review" required="required" ></textarea>
+          <textarea ng-model="vm.book.review" name="review" required="required" ></textarea>
         </div>
         <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must write a review!
         </div>
 
         <div class="input-group">
           <label>Rating:</label>
-          <select id="rating" name="rating" value="5" ng-model="$ctrl.book.rating" required="required">
+          <select id="rating" name="rating" ng-model="vm.book.rating" required="required">
             <option>5</option>
             <option>4</option>
             <option>3</option>

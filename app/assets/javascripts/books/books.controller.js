@@ -1,13 +1,14 @@
 (function() { 
   'use strict';
 
-  function BooksController($scope, $state, $stateParams, BookService, Auth) {
+  function BooksController($scope, $state, $stateParams, BookService, Auth, BookFactory) {
 
     var vm = this;
     vm.signedIn = Auth.isAuthenticated();
     vm.searchTerm = '';
-    vm.createBookReview = createBookReview;
+    vm.createBook = createBook;
     $scope.$state = $state;
+
     $scope.goBack = function() { 
       window.history.back();
     };
@@ -44,18 +45,18 @@
         vm.item = response.data.volumeInfo;
       });
     
-    function createBookReview() {
-      return BookService.createBookReview(vm.bookReview)
-        .then(showBookReview)
+    function createBook() {
+      return BookFactory.createBook(vm.book)
+        .then(showBook)
       
       }
 
-    function showBookReview(data) {
-      vm.bookReviews.push(data.bookReview)
+    function showBook(data) {
+      vm.books.push(data.book)
     }
   };
 
-  BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookService', 'Auth']
+  BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookService', 'Auth', 'BookFactory']
 
 angular
   .module('app')
