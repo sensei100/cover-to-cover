@@ -5,8 +5,10 @@
 
     var vm = this;
     vm.books;
+    vm.getBooks = getBooks;
     vm.signedIn = Auth.isAuthenticated();
     vm.searchTerm = '';
+    vm.id;
     vm.createBook = createBook;
     $scope.$state = $state;
 
@@ -17,6 +19,14 @@
     activate();
 
     function activate() {
+      if (!!$stateParams.id) {
+        BookService
+          .bookDetails()
+          .then(function (response) {
+            console.log(response.data.volumeInfo);
+            vm.item = response.data.volumeInfo;
+          });
+      }
       getCurrentUser();
     }
 
@@ -30,21 +40,6 @@
             return vm.user = user;
         }
 
-    BookService
-      .getBooks({ q: vm.searchTerm })
-      .then(function (response) {
-        vm.searchTerm = BookService.query = response.q;
-        console.log(response.data.items);
-        $scope.items = response.data.items;
-        
-      });
-
-    BookService
-      .bookDetails()
-      .then(function (response) {
-        console.log(response.data.volumeInfo);
-        vm.item = response.data.volumeInfo;
-      });
     
     function createBook() {
       return BookFactory.createBook(vm.book)
@@ -54,6 +49,29 @@
 
     function showBook(data) {
       $state.go('home.books')
+    }
+
+    // cleanText = strInputCode.replace(/<\/?[^>]+(>|$)/g, "");
+
+
+    function getBooks() {
+      BookService
+      .getBooks(vm.searchTerm)
+      .then(function (response) {
+        console.log(response.data.items);
+        $scope.items = response.data.items;
+        
+      });
+    }
+
+    function bookDetails() {
+    BookService
+      .bookDetails(vm.id)
+      .then(function (response) {
+        console.log(response.data.volumeInfo);
+        vm.item = response.data.volumeInfo;
+        vm.id = response.data.volumeInfo.id;
+      });
     }
   };
 
