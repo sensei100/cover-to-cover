@@ -13,14 +13,33 @@
   function BookComponentController(BookFactory, $state) {
     var ctrl = this;
 
-    ctrl.addBookReview = addBookReview;
+    ctrl.getBooks = getBooks;
+
+    activate();
+
+    function activate() {
+      getBooks();
+      getCurrentUser();
+    };
   
-  function addBookReview() {
-    return BookFactory.addBookReview(ctrl.book)
-        .then(function() {
-          $state.go('profile')
-        })
+    function getBooks() {
+      return BookFactory.getBooks()
+          .then(setBooks)
+    };
+
+    function setBooks(data) {
+      ctrl.books = data;              
     }
+
+    function getCurrentUser() {
+      return Auth.currentUser()
+        .then(setCurrentUser);
+        }
+
+        function setCurrentUser(user) {
+          console.log(user);
+            return ctrl.user = user;
+        }
   }
 
   angular

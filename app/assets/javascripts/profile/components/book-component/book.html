@@ -1,32 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <form id="add-book-review" name="form" ng-submit="$ctrl.addBookReview()">     
-        <div class="input-group">
-          <label>Review:</label>
-          <textarea ng-model="$ctrl.book.review" name="review" required="required" ></textarea>
-        </div>
-        <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must write a review!
-        </div>
+<h1>My Book Reviews</h1>
 
-        <div class="input-group">
-          <label>Rating:</label>
-          <select id="rating" name="rating" value="5" ng-model="$ctrl.book.rating" required="required">
-            <option>5</option>
-            <option>4</option>
-            <option>3</option>
-            <option>2</option>
-            <option>1</option>
-          </select>
-        </div>
-        <div class="form-error" ng-if="form.rating.$touched && form.rating.$error.required"> Rating is required!
-        </div>
 
-        <input id="submit-review" class="btn btn-primary" type="submit" value="Add Book Review">
-      </form>
-    </div>
-    <div class="col-md-4">
-      
-    </div>
+<a href="#" ui-sref="home.book({id: book.id})"><div class="book-card col-md-9 col-md-offset-1" ng-if="book.user_id == $ctrl.user.id" ng-repeat="book in $ctrl.books | orderBy: orderProp">
+  <div class="card-block">
+    <h4 class="card-title"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ book.title }}</h4>
+    <p class="card-author">{{ book.author }}</p>
+    <p class="card-review"> {{ book.review }}</p> 
+     <p class="card-rating"> {{ book.rating }}</p>  
   </div>
-</div>
+</div></a>
