@@ -4,6 +4,7 @@
   function BooksController($scope, $state, $stateParams, BookService, Auth, BookFactory) {
 
     var vm = this;
+    vm.books;
     vm.signedIn = Auth.isAuthenticated();
     vm.searchTerm = '';
     vm.createBook = createBook;
@@ -52,7 +53,7 @@
       }
 
     function showBook(data) {
-      vm.books.push(data.book)
+      $state.go('home.books')
     }
   };
 

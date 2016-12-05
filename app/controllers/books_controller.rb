@@ -13,10 +13,19 @@ class BooksController < ApplicationController
   def create
     book = Book.new(book_params)
     if book.save
-      render json: { status: 'ok' }
+      render json: {
+        status: 'ok',
+        book: {
+          id: book.id,
+          title: title,
+          review: book.review,
+          rating: book.rating,
+          book_user_id: current_user.id,
+        }
+      }
     else
       render json: 
-      { errors: book.errors.full_messages },
+      { errors: post.errors.full_messages },
       status: :unprocessable_entity
     end
   end

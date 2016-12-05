@@ -49,7 +49,7 @@
         .then(handleSuccess)
         .catch(handleError); 
 
-    }
+    } */
     
     function handleSuccess(response) {
       console.log(response)
@@ -58,7 +58,7 @@
 
     function handleError(error) {
       console.log(error) 
-    } */
+    } 
 
   }
 
