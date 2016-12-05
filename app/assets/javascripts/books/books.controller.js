@@ -8,7 +8,6 @@
     vm.searchTerm = '';
     vm.createBookReview = createBookReview;
     $scope.$state = $state;
-
     $scope.goBack = function() { 
       window.history.back();
     };

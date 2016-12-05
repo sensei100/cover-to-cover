@@ -23,8 +23,7 @@
     };
 
     function setPosts(data) {
-      vm.posts = data; 
-      $scope.orderProp = 'vm.post.created_at';              
+      vm.posts = data;              
     }
 
     function createPost() {
