@@ -16,13 +16,13 @@
       <form id="add-book-review" name="form" ng-submit="vm.createBook()">  
         <div class="input-group">
           <label>Title:</label>
-          <input type="text" ng-model="vm.book.title" name="title" required="required" ng-init="vm.item.title" ></input>
+          <input type="text" ng-model="vm.book.title" name="title" required="required">
         </div> 
         <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must include the title!
         </div>
         <div class="input-group">
           <label>Author:</label>
-          <input type="text" ng-model="vm.book.author" name="author" required="required" ng-init="vm.item.authors[0]"></input>
+          <input type="text" ng-model="vm.book.author" name="author" required="required">
         </div>
         <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must include an author!
         </div>  
