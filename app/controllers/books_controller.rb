@@ -11,7 +11,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    user = User.find(params[:user_id])
+    user = User.find(current_user)
     book = user.books.create(book_params)
     if book.save
       render json: {
@@ -22,6 +22,7 @@ class BooksController < ApplicationController
           author: book.author,
           review: book.review,
           rating: book.rating,
+          user_id: user
         }
       }
     else
@@ -58,6 +59,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :rating, :review)
+    params.require(:book).permit(:title, :author, :rating, :review, :user_id)
   end
 end

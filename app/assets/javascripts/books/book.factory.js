@@ -8,7 +8,7 @@
       createBook: createBook
     }
 
-    function createBook(book) {
+    function createBook(book, user) {
       
       var req = {
         method: 'POST',
@@ -17,7 +17,8 @@
           'Content-Type': 'application/json'
         },
         data: { 
-          book: book
+          book: book,
+          user: user.id
         }
       };
 

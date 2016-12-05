@@ -34,7 +34,8 @@
 
     
     function createBook() {
-      return BookFactory.createBook(vm.book)
+      return BookFactory.createBook(vm.book, vm.user)
+
         .then(showBook)
       
       }
