@@ -57,7 +57,6 @@
     }
 
     function bookDetails() {
-      debugger;
       BookService
       .bookDetails($stateParams.id)
       .then(function (response) {
