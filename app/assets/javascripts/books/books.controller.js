@@ -6,9 +6,9 @@
     var vm = this;
     vm.books;
     vm.getBooks = getBooks;
+    vm.bookDetails = bookDetails;
     vm.signedIn = Auth.isAuthenticated();
     vm.searchTerm = '';
-    vm.id;
     vm.createBook = createBook;
     $scope.$state = $state;
 
@@ -19,14 +19,6 @@
     activate();
 
     function activate() {
-      if (!!$stateParams.id) {
-        BookService
-          .bookDetails()
-          .then(function (response) {
-            console.log(response.data.volumeInfo);
-            vm.item = response.data.volumeInfo;
-          });
-      }
       getCurrentUser();
     }
 
@@ -65,12 +57,13 @@
     }
 
     function bookDetails() {
-    BookService
-      .bookDetails(vm.id)
+      debugger;
+      BookService
+      .bookDetails($stateParams.id)
       .then(function (response) {
         console.log(response.data.volumeInfo);
         vm.item = response.data.volumeInfo;
-        vm.id = response.data.volumeInfo.id;
+        $stateParams.id = response.data.volumeInfo.id;
       });
     }
   };
