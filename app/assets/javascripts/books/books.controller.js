@@ -44,9 +44,6 @@
       $state.go('home.books')
     }
 
-    // cleanText = strInputCode.replace(/<\/?[^>]+(>|$)/g, "");
-
-
     function getBooks() {
       BookService
       .getBooks(vm.searchTerm)
@@ -66,6 +63,13 @@
         $stateParams.id = response.data.volumeInfo.id;
       });
     }
+
+    /*function stripHtml() {
+      cleanText = vm.item.replace(/<\/?[^>]+(>|$)/g, "");
+    } */
+
+    
+    
   };
 
   BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookService', 'Auth', 'BookFactory']

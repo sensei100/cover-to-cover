@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 form-div">
+    <h4 class="home-headline">Are you looking to for new books to read?  Search through the reviews and ratings that others have written to find your next read.</h4>
+    <div ng-controller="HomeController as vm">
+      <div class="search-box">
+        <label for="query">Search :</label>
+        <input name="query" ng-model="query" />
+      </div>
+    <div>
+      <ul class="book-list" ng-controller="BooksController as vm">
+        <li class="book-list-item" ng-repeat="book in vm.books"><a href="#" ui-sref="home.books.book({id: book.id})"> {{book.title}} - {{book.author}}</a></li>    
+      </ul>
+    </div> 
+  </div>  
+</div>
