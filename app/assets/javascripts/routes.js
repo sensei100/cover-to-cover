@@ -8,18 +8,17 @@
       '$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('home', {
-          url: '/',
+          
           templateUrl: 'home/home.html',
           controller: 'HomeController as vm'
         })
         .state('home.main', {
-          url: '/main',
-          abstract: true,
+          url: '/',
           templateUrl: 'home/main.html',
           controller: 'HomeController as vm'
         })
          .state('home.books', {
-          url: 'books',
+          url: '/books',
           templateUrl: 'books/books.html',
           controller: 'BooksController as vm'
         })
@@ -29,7 +28,7 @@
           controller: 'BooksController as vm'
         })
          .state('home.discussion', {
-          url: 'discussion',
+          url: '/discussion',
           templateUrl: 'discussion/posts.html',
           controller: 'PostsController as vm'
         })
