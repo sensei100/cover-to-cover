@@ -13,7 +13,8 @@
           controller: 'HomeController as vm'
         })
         .state('home.main', {
-          url: 'main',
+          url: '/main',
+          abstract: true,
           templateUrl: 'home/main.html',
           controller: 'HomeController as vm'
         })
