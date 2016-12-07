@@ -368,7 +368,12 @@ textarea {
   list-style-type: none;
   font-family: 'Raleway', cursive;
   font-size: 1.3em;
+}
 
+#search-label,
+#rating-label {
+  width: 70px;
+  margin-bottom: 15px;
 }
 
 

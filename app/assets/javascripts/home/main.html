@@ -6,12 +6,12 @@
   <div class="col-md-5 col-md-offset-1 form-div"> 
     <div>
       <div class="search-box">
-        <label for="query">Search :</label>
+        <label id="search-label">Search:</label>
         <input type="text" ng-model="vm.search" ng-change="vm.refilter()" />
 
         <div class="input-group">
-          <label>Rating:</label>
-          <select id="rating" name="rating" ng-model="vm.searchRating" ng-change="vm.refilter()">
+          <label id="rating-label">Rating:</label>
+          <select name="rating" ng-model="vm.searchRating" ng-change="vm.refilter()">
             <option>5</option>
             <option>4</option>
             <option>3</option>
