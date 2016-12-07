@@ -8,7 +8,7 @@
 
 <div class="book-search-box" ng-hide="$state.includes('home.books.book')">
     <h3 class="book-title">Looking for a new book?</h3>
-    <form id="book-search-form" ng-submit="vm.getBooks()">
+    <form id="book-search-form" ng-submit="vm.bookSearch()">
       <label class="book-search-label">Book Search:</label>
       <input id="book-input" ng-model="vm.searchTerm" type="text" name="book-search"><br><br>
             
