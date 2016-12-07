@@ -1,7 +1,7 @@
 (function() { 
   'use strict';
 
-  function BooksController($scope, $state, $stateParams, BookService, Auth, BookFactory) {
+  function BooksController($scope, $state, $stateParams, BookService, Auth, BookFactory, $filter) {
 
     var vm = this;
     vm.books;
@@ -11,6 +11,7 @@
     vm.signedIn = Auth.isAuthenticated();
     vm.searchTerm = '';
     vm.createBook = createBook;
+    vm.refilter = refilter;
     $scope.$state = $state;
 
     console.log(vm.books);
@@ -40,10 +41,15 @@
     function getBooks() {
       return BookFactory.getBooks()
         .then(setBooks)
+        .then(setFilteredList)
     }
 
     function setBooks(data) {
       return vm.books = data;
+    }
+
+    function setFilteredList(data) {
+      return vm.filteredList = data;
     }
     
     function createBook() {
@@ -76,6 +82,15 @@
       });
     }
 
+    vm.search = '';
+    vm.searchRating = '';
+
+    function refilter() {
+      if (vm.search && !vm.searchRating) {
+        return vm.filteredList = $filter('filter')(vm.books, vm.search)
+      }
+    }
+
     /*function stripHtml() {
       cleanText = vm.item.replace(/<\/?[^>]+(>|$)/g, "");
     } */
@@ -84,7 +99,7 @@
     
   };
 
-  BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookService', 'Auth', 'BookFactory']
+  BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookService', 'Auth', 'BookFactory', '$filter']
 
 angular
   .module('app')
