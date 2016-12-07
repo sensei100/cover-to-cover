@@ -7,8 +7,7 @@
     .config([
       '$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
       $stateProvider
-        .state('home', {
-          
+        .state('home', { 
           templateUrl: 'home/home.html',
           controller: 'HomeController as vm'
         })
@@ -25,6 +24,11 @@
          .state('home.books.book', {
           url: '/:id',
           templateUrl: 'books/book.html',
+          controller: 'BooksController as vm'
+        })
+         .state('home.books.book-review', {
+          url: '/:id',
+          templateUrl: 'books/book-review.html',
           controller: 'BooksController as vm'
         })
          .state('home.discussion', {
