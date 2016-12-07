@@ -5,20 +5,23 @@
 
     var vm = this;
     vm.books;
+    vm.searchTerm = '';
+    vm.search = '';
+    vm.searchRating = '';
+
     vm.getBooks = getBooks;
     vm.bookSearch = bookSearch;
     vm.bookDetails = bookDetails;
     vm.signedIn = Auth.isAuthenticated();
-    vm.searchTerm = '';
     vm.createBook = createBook;
     vm.refilter = refilter;
-    $scope.$state = $state;
 
-    console.log(vm.books);
+    $scope.$state = $state;
 
     $scope.goBack = function() { 
       window.history.back();
     };
+
     console.log(Auth.isAuthenticated()); 
 
     activate();
@@ -44,18 +47,17 @@
         .then(setFilteredList)
     }
 
-    function setBooks(data) {
-      return vm.books = data;
-    }
+        function setBooks(data) {
+          return vm.books = data;
+        }
 
-    function setFilteredList(data) {
-      return vm.filteredList = data;
-    }
+        function setFilteredList(data) {
+          return vm.filteredList = data;
+        }
     
     function createBook() {
       return BookFactory.createBook(vm.book, vm.user)
         .then(showBook)
-      
       }
 
     function showBook(data) {
@@ -82,21 +84,17 @@
       });
     }
 
-    vm.search = '';
-    vm.searchRating = '';
-
     function refilter() {
       if (vm.search && !vm.searchRating) {
         return vm.filteredList = $filter('filter')(vm.books, vm.search)
+      } else {
+        return vm.filteredList
       }
     }
 
     /*function stripHtml() {
       cleanText = vm.item.replace(/<\/?[^>]+(>|$)/g, "");
-    } */
-
-    
-    
+    } */  
   };
 
   BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookService', 'Auth', 'BookFactory', '$filter']
