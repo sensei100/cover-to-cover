@@ -8,7 +8,7 @@
       </div>
     <div>
       <ul class="book-list" ng-controller="BooksController as vm">
-        <li class="book-list-item" ng-repeat="book in vm.books"><a href="#" ui-sref="home.books.book({id: book.id})"> {{vm.book.title}} - {{vm.book.author}}</a></li>    
+        <li class="book-list-item" ng-repeat="book in vm.books"><p> {{vm.book.title}} - {{vm.book.author}}</p></li>    
       </ul>
     </div> 
   </div>  
