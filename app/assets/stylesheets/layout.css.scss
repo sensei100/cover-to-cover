@@ -348,11 +348,27 @@ textarea {
   box-shadow: 0 2px 1px -1px;
 }
 
-.home-headline {
-  margin-top: 40px;
+.main-headline {
+  background: #0375B4;
+  height: 100px;
   margin-bottom: 40px;
+  border-bottom: 1px solid #262228;
+  padding-top: 15px;
+}
+
+.home-headline {
+  margin-left: 40px;
   font-family: 'Raleway', cursive;
-  line-height: 1.5;
+  font-size: 1.5em;
+  color: white;
+}
+
+.book-list {
+  margin-top: 40px;
+  list-style-type: none;
+  font-family: 'Raleway', cursive;
+  font-size: 1.3em;
+
 }
 
 
