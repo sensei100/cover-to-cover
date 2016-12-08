@@ -21,12 +21,12 @@
           templateUrl: 'books/books.html',
           controller: 'BooksController as vm'
         })
-         .state('home.books.book', {
-          url: '/:id',
+         .state('home.books.book-details', {
+          url: '/book-details/:id',
           templateUrl: 'books/book.html',
           controller: 'BooksController as vm'
         })
-         .state('home.books.book-review', {
+         .state('home.books.book', {
           url: '/:id',
           templateUrl: 'books/book-review.html',
           controller: 'BookShowController as vm'

@@ -3,6 +3,7 @@
 
   function BookShowController($state, $stateParams, Auth, BookFactory) {
     var vm = this;
+    vm.getBook = getBook;
 
     Auth.currentUser()
     .then(function(user) {
@@ -12,16 +13,16 @@
     activate();
 
     function activate() {
-        getBook();
+        getBook($stateParams.id);
       }
     
-    function getBook() {
-      return BookFactory.getBook($stateParams.id)
+    function getBook(id) {
+      return BookFactory.getBook(id)
         .then(setBook)
     }
 
     function setBook(data) {
-       vm.book = data;
+      return vm.book = data;
     }
 }
 

@@ -36,7 +36,7 @@
         }
 
     function getBook(id) {
-      return $http.get('books/' + $stateParams.id)
+      return $http.get('/books/' + id)
         .then(handleSuccess)
         .catch(handleError)
     }
