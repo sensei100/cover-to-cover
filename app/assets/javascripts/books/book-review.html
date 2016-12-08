@@ -1,11 +1,9 @@
-<div class="detail-card col-md-9" ng-controller="BooksController as vm">
-  <img class="card-img-top" ng-src="{{ vm.item.imageLinks.smallThumbnail }}" alt="Card image cap">
+<div class="detail-card col-md-9">
   <div class="card-block">
-    <h4 class="card-title">{{ vm.item.title }}</h4>
-    <h5 class="card-subtitle">By: {{ vm.item.authors[0] }}</h5>
-    <p id="book-description" ng-init="vm.stripHtml()" class="card-text">Description: {{ vm.item.description }}</p>
-    <p class="card-text">Published: {{ vm.item.publisher }}</p>
-    <p class="card-text"> {{ vm.item.publishedDate | date: 'mediumDate' }}</p>
+    <h4 class="card-title">{{ vm.book.title }}</h4>
+    <h5 class="card-subtitle">By: {{ vm.book.author }}</h5>
+    <p id="book-description" class="card-text">Review: {{ vm.book.review }}</p>
+    <p class="card-text">Rating: {{ vm.book.rating }}</p>
     <a href="" ng-click="showBookReview = true" class="btn btn-primary">Add a Book Review</a>
     <a href="" ng-click="goBack()" class="btn btn-success">Go back to search results</a>
 </div>

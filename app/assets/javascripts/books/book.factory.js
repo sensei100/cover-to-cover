@@ -2,11 +2,12 @@
 
   'use strict';
 
-  function BookFactory($http) {
+  function BookFactory($http, $stateParams) {
 
     return {
       getBooks: getBooks,
-      createBook: createBook
+      createBook: createBook,
+      getBook: getBook
     }
 
     function getBooks() {
@@ -34,7 +35,11 @@
         .catch(handleError);
         }
 
-    
+    function getBook(id) {
+      return $http.get('books/' + $stateParams.id)
+        .then(handleSuccess)
+        .catch(handleError)
+    }
 
     /*function updateBook(Book) {
       var req = {
@@ -70,7 +75,7 @@
 
   }
 
-  BookFactory.$inject = ['$http']
+  BookFactory.$inject = ['$http', '$stateParams']
 
   angular
     .module('app')

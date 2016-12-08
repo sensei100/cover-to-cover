@@ -29,7 +29,7 @@
          .state('home.books.book-review', {
           url: '/:id',
           templateUrl: 'books/book-review.html',
-          controller: 'BooksController as vm'
+          controller: 'BookShowController as vm'
         })
          .state('home.discussion', {
           url: '/discussion',
