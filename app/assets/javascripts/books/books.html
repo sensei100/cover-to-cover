@@ -6,7 +6,7 @@
 
   <ui-view></ui-view>
 
-<div class="book-search-box" ng-hide="$state.includes('home.books.book')">
+<div class="book-search-box" ng-hide="$state.includes('home.books.book-details')">
     <h3 class="book-title">Looking for a new book?</h3>
     <form id="book-search-form" ng-submit="vm.bookSearch()">
       <label class="book-search-label">Book Search:</label>
@@ -16,7 +16,7 @@
     </form>
   </div>
 
-  <div class="card col-md-5" ng-repeat="item in items" ng-hide="$state.includes('home.books.book')">
+  <div class="card col-md-5" ng-repeat="item in items" ng-hide="$state.includes('home.books.book-details')">
      <img class="card-img-top" ng-src="{{item.volumeInfo.imageLinks.smallThumbnail}}" alt="Card image cap">
      <div class="card-block">
        <h4 class="card-title">{{item.volumeInfo.title}}</h4>
