@@ -87,7 +87,7 @@
       if (vm.search && !vm.searchRating) {
         return vm.filteredList = $filter('filter')(vm.books, vm.search)
         } else if (vm.searchRating && !vm.search) { 
-        return vm.filteredRating = $filter('filter')(vm.books, vm.searchRating)
+        return vm.filteredList = $filter('filter')(vm.books, vm.searchRating)
         } else {
           vm.filteredRatingList = $filter('filter')(vm.books, vm.searchRating);
           return vm.filteredList = $filter('filter')(vm.filteredRatingList, vm.search)
