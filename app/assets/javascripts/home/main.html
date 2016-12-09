@@ -11,13 +11,8 @@
 
         <div class="input-group">
           <label id="rating-label">Rating:</label>
-          <select name="rating" ng-model="vm.searchRating" ng-change="vm.refilter()">
-            <option>5</option>
-            <option>4</option>
-            <option>3</option>
-            <option>2</option>
-            <option>1</option>
-          </select>
+          <select name="rating" ng-model="vm.searchRating" ng-change="vm.refilter()" ng-options="book.rating as book.rating for book in vm.books | unique: 'rating'">
+           
         </div>
       </div>
     <div>

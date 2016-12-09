@@ -17,6 +17,7 @@
     vm.refilter = refilter;
 
     $scope.$state = $state;
+    $scope.options = ['rating']
 
     $scope.goBack = function() { 
       window.history.back();
@@ -87,7 +88,7 @@
     function refilter() {
       if (vm.search && !vm.searchRating) {
         return vm.filteredList = $filter('filter')(vm.books, vm.search)
-        } else if (vm.searchRating && !vm.search) {
+        } else if (vm.searchRating && !vm.search) { 
         return vm.filteredList = $filter('filter')(vm.books, vm.searchRating)
         } else {
           vm.filteredRatingList = $filter('filter')(vm.books, vm.searchRating);

@@ -1,11 +1,13 @@
 {
+  "name": "cover-to-cover",
   "vendor": {
     "name": "bower-rails generated vendor assets",
     "dependencies": {
      "angular": "v1.5.8",
      "angular-ui-router": "latest",
      "bootstrap-sass-official": "latest",
-     "angular-devise": "latest"
+     "angular-devise": "latest",
+     "angular-filter": "latest"
     }
   }
 }
