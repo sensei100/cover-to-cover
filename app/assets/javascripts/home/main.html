@@ -12,12 +12,12 @@
         <div class="input-group">
           <label id="rating-label">Rating:</label>
           <select name="rating" ng-model="vm.searchRating" ng-change="vm.refilter()" ng-options="book.rating as book.rating for book in vm.books | unique: 'rating'">
-           
+          </select>
         </div>
       </div>
     <div>
       <ul class="book-list">
-        <li class="book-list-item" ng-repeat="book in vm.filteredList track by book.title"><a href="" ui-sref="home.books.book({id: book.id})"> {{book.title}} - {{book.author}}</p></li>    
+        <li class="book-list-item" ng-repeat="book in vm.filteredList track by book.title "><a href="" ui-sref="home.books.book({id: book.id})"> {{book.title}} - {{book.author}}</p></li>    
       </ul>
     </div> 
   </div>  
