@@ -55,13 +55,6 @@
       return $http(req)
         .then(handleSuccess)
         .catch(handleError);
-    }
-
-    function destroyBook(id) {
-      return $http.delete('/Books/' + id)
-        .then(handleSuccess)
-        .catch(handleError); 
-
     } */
     
     function handleSuccess(response) {
