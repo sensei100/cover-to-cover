@@ -55,9 +55,13 @@
         }
     
     function createBook() {
+      if (vm.signedIn) {
       return BookFactory.createBook(vm.book, vm.user)
         .then(showBook)
+      } else {
+        alert("You must be signed in to write a review")
       }
+    }
 
     function showBook(data) {
       vm.books.push(data.book)
