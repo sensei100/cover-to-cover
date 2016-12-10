@@ -14,8 +14,19 @@
     activate();
 
     function activate() {
+      getCurrentUser();
       getPosts();
     };
+
+    function getCurrentUser() {
+      return Auth.currentUser()
+        .then(setCurrentUser);
+        }
+
+        function setCurrentUser(user) {
+          console.log(user);
+            return vm.user = user;
+        } 
 
     function getPosts() {
       return PostFactory.getPosts()
@@ -27,9 +38,12 @@
     }
 
     function createPost() {
+      if (vm.signedIn) {
       return PostFactory.createPost(vm.post)
         .then(showPost)
-      
+        } else {
+          alert("You must be signed in to add a post.")
+        }
       }
 
     function showPost(data) {
