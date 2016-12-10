@@ -92,11 +92,7 @@
           vm.filteredRatingList = $filter('filter')(vm.books, vm.searchRating);
           return vm.filteredList = $filter('filter')(vm.filteredRatingList, vm.search)
         }
-      }
-    
-    /*function stripHtml() {
-      cleanText = vm.item.replace(/<\/?[^>]+(>|$)/g, "");
-    } */  
+      } 
   };
 
   BooksController.$inject = ['$scope', '$state', '$stateParams', 'BookService', 'Auth', 'BookFactory', '$filter']

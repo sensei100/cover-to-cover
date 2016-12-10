@@ -392,6 +392,25 @@ footer {
    width:100%;
 }
 
+.footer {
+    border-top: 1px solid red;
+    height: 60px;  /* footer height */
+    padding-top: 20px;
+    display: block;
+    margin-top: 20px; /* space between content and footer */
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+}
+
+.wrap {
+    height: auto;
+    margin: 0 auto -80px; /* footer height + space */
+    min-height: 100%;
+    padding: 0 0 80px; /* footer height + space */
+    box-sizing: border-box;
+    overflow: auto;
+}
 
 
 @media only screen and (max-width : 1200px) {
