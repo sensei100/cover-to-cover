@@ -19,8 +19,7 @@
         function setCurrentUser(user) {
           console.log(user);
             return vm.user = user;
-        }
-    
+        } 
   }
 
   HomeController.$inject = ['BookFactory', '$scope', '$filter', 'Auth']
