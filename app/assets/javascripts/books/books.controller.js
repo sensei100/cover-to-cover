@@ -65,7 +65,7 @@
 
     function showBook(data) {
       vm.books.push(data.book)
-      $state.go('home.books')
+      $state.go('home.main')
     }
 
     function bookSearch() {
