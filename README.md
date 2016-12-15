@@ -12,4 +12,4 @@ Bug reports and pull requests are welcome on GitHub at github.com/sensei100/cove
 
 # License
 
-This project is licensed under the MIT License - see the LICENSE file for details
+The application is available as open source under the terms of the MIT License(opensource.org/licenses/MIT).
