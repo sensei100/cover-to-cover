@@ -1,24 +1,15 @@
-# README
+# Cover to Cover
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Cover to Cover is an online book club application. It is constructed with a Ruby on Rails back-end to persist and render JSON data to the AngularJS front-end.
 
-Things you may want to cover:
+# Getting Started
 
-* Ruby version
+To install this app, clone or download the repository to your local machine, run bundle install, start a rails server and browse to to your localhost page.
 
-* System dependencies
+# Contributing
 
-* Configuration
+Bug reports and pull requests are welcome on GitHub at github.com/sensei100/cover-to-cover. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Database creation
+# License
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is licensed under the MIT License - see the LICENSE file for details
