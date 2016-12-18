@@ -18,10 +18,10 @@
 </div>
 
 <label>
-  Sort by: 
-    <select id="option" ng-model="sortBy" ng-options="option for option in options">
-      
-    </select>
+  Sort by:<br>
+    <input type="radio" name="created_at" ng-model="" ng-change="sortBy">Date<br>
+    <input type="radio" name="username" ng-model="" ng-change="sortBy">Username<br>
+    
 </label>
 
 <div id="post-list">
