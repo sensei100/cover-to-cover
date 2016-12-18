@@ -19,19 +19,19 @@
           <label>Title:</label>
           <input type="text" ng-model="vm.book.title" name="title" required="required">
         </div> 
-        <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must include the title!
+        <div class="form-error alert alert-danger" ng-if="form.review.$touched && form.review.$error.required"> You must include the title!
         </div>
         <div class="input-group">
           <label>Author:</label>
           <input type="text" ng-model="vm.book.author" name="author" required="required">
         </div>
-        <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must include an author!
+        <div class="form-error alert alert-danger" ng-if="form.review.$touched && form.review.$error.required"> You must include an author!
         </div>  
         <div class="input-group">
           <label>Review:</label>
           <textarea ng-model="vm.book.review" name="review" required="required" ></textarea>
         </div>
-        <div class="form-error" ng-if="form.review.$touched && form.review.$error.required"> You must write a review!
+        <div class="form-error alert alert-danger" ng-if="form.review.$touched && form.review.$error.required"> You must write a review!
         </div>
 
         <div class="input-group">
@@ -44,7 +44,7 @@
             <option>1</option>
           </select>
         </div>
-        <div class="form-error" ng-if="form.rating.$touched && form.rating.$error.required"> Rating is required!
+        <div class="form-error alert alert-danger" ng-if="form.rating.$touched && form.rating.$error.required"> Rating is required!
         </div>
 
         <input id="submit-review" class="btn btn-primary" type="submit" value="Submit Review">

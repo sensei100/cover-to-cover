@@ -18,7 +18,7 @@
 
     $scope.$state = $state;
     $scope.options = ['rating']
-
+    
     $scope.goBack = function() { 
       window.history.back();
     };
