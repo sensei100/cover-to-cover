@@ -48,6 +48,8 @@
 
     function showPost(data) {
       vm.posts.push(data.post)
+      $scope.form.$setUntouched();
+      $scope.form.$setPristine();
     }
 
   };
