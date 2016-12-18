@@ -64,7 +64,8 @@
     }
 
     function showBook(data) {
-      vm.books.push(data.book)
+      vm.books.push(data.book);
+      alert("Your review has been saved.");
       $state.go('home.main')
     }
 
