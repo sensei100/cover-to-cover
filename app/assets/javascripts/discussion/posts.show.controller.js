@@ -47,6 +47,7 @@
                        .then(showPosts);
             } else {
                 alert("You cannot delete someone else's post.");
+                $state.go('home.discussion');
             }
         };
 
