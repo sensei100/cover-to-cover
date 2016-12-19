@@ -8,6 +8,7 @@
     vm.createPost = createPost;
     vm.signedIn = Auth.isAuthenticated();
 
+
     activate();
 
     function activate() {
@@ -48,6 +49,18 @@
       $scope.form.$setUntouched();
       $scope.form.$setPristine();
     }
+
+    $scope.increment = function(post) {
+      post.like += 1;
+    }
+
+    $scope.sortBy = function() {
+      
+      vm.posts = vm.posts.sort(function(a,b) {
+        return a.like < b.like;
+      });
+      debugger; 
+    } 
   };
 
   PostsController.$inject = ['$scope', '$state', 'PostFactory', 'Auth']
