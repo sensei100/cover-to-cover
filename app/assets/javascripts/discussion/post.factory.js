@@ -68,7 +68,7 @@
 
     }
 
-    function upvote(post) {
+    function upVote(post) {
             return $http.put('/posts/' + post.id + '/upvote.json')
           .success(function (data) {
             post.upvotes++;
@@ -77,7 +77,7 @@
             .catch(handleError)
         }
 
-    function downvote(post) {
+    function downVote(post) {
           return $http.put('/posts/' + post.id + '/downvote.json')
         .success(function (data) {
           post.downvotes--;

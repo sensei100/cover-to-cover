@@ -51,19 +51,18 @@
     }
 
     $scope.increment = function(post) {
-      post.vote += 1;
+      post.upvote += 1;
     }
 
     $scope.decrement = function(post) {
-      post.vote -= 1;
+      post.upvote -= 1;
     }
 
     $scope.sortBy = function() {
       
       vm.posts = vm.posts.sort(function(a,b) {
-        return a.vote < b.vote;
-      });
-      debugger; 
+        return a.upvote < b.upvote;
+      }); 
     } 
   };
 
