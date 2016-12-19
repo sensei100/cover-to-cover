@@ -7,6 +7,7 @@
         vm.destroyPost = destroyPost;
         vm.signedIn = Auth.isAuthenticated();
         vm.getCurrentUser = getCurrentUser;
+        
 
         //instantiated info
         activate();
