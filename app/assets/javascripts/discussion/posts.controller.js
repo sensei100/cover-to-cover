@@ -51,17 +51,17 @@
     }
 
     $scope.increment = function(post) {
-      post.like += 1;
+      post.vote += 1;
     }
 
     $scope.decrement = function(post) {
-      post.like -= 1;
+      post.vote -= 1;
     }
 
     $scope.sortBy = function() {
       
       vm.posts = vm.posts.sort(function(a,b) {
-        return a.like < b.like;
+        return a.vote < b.vote;
       });
       debugger; 
     } 

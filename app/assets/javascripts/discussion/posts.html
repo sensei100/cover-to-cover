@@ -29,6 +29,6 @@
       <p class="card-datetime">Written on: {{ post.created_at | date: 'mediumDate'}}</p></a>
       <button ng-click="increment(post)">Like</button>
       <button ng-click="decrement(post)">Dislike</button>
-      <p ng-init="post.like=0" >Likes: {{ post.like }}</p> 
+      <p ng-init="post.vote=0" >Likes: {{ post.vote }}</p> 
     </div>
 </div>
