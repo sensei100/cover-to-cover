@@ -11,6 +11,8 @@
       createPost: createPost,
       updatePost: updatePost,
       destroyPost: destroyPost,
+      upVote: upVote,
+      downVote: downVote
     }
 
     function getPosts() {
@@ -65,6 +67,24 @@
         .catch(handleError); 
 
     }
+
+    function upvote(post) {
+            return $http.put('/posts/' + post.id + '/upvote.json')
+          .success(function (data) {
+            post.upvotes++;
+          })
+            .then(handleSuccess)
+            .catch(handleError)
+        }
+
+    function downvote(post) {
+          return $http.put('/posts/' + post.id + '/downvote.json')
+        .success(function (data) {
+          post.downvotes--;
+        })
+          .then(handleSuccess)
+          .catch(handleError)
+      }
     
     function handleSuccess(response) {
       console.log(response)
