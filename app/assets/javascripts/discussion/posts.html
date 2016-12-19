@@ -8,9 +8,12 @@
     <input type="hidden" id="id" name="id" data-ng-model="vm.post.id" />
     
     <label for="name">Add a Post:</label><br>
-    <textarea ng-model="vm.post.content" type="text" name="content" required="required"></textarea></br></br>
+    <textarea ng-model="vm.post.content" type="text" name="content" required="required" minlength="10"></textarea></br></br>
 
     <div class="form-error alert alert-danger" ng-if="form.content.$touched && form.content.$error.required"> Content is required!
+    </div>
+
+    <div class="form-error alert alert-danger" ng-if="form.content.$error.minlength">Post must be at least 10 characters!
     </div>
 
     <input class="btn btn-primary" type="submit" value="Add Post">
