@@ -54,6 +54,10 @@
       post.like += 1;
     }
 
+    $scope.decrement = function(post) {
+      post.like -= 1;
+    }
+
     $scope.sortBy = function() {
       
       vm.posts = vm.posts.sort(function(a,b) {
