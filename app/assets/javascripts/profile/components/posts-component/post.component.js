@@ -37,8 +37,7 @@
         }
 
         function setCurrentUser(user) {
-          console.log(user);
-            return ctrl.user = user;
+          return ctrl.user = user;
         }
   }
 

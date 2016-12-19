@@ -176,7 +176,7 @@ body {
 .sidebar-left {
   float: left;
   width: 25%;
-  height: 100vh;
+  height: 500vh;
   background: #ffcf00;
   margin-top: -5px;
   box-sizing: border-box;
@@ -188,7 +188,7 @@ body {
   float: left;
   width: 75%;
   padding: 30px;
-  height: 100vh;
+  height: auto;
 }
 
 .user-banner {
@@ -416,7 +416,6 @@ footer {
   margin-left: 100px;
   font-family: 'Raleway', cursive; 
 }
-
 
 @media only screen and (max-width : 1200px) {
   .about {
