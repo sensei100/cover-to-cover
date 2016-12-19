@@ -17,15 +17,8 @@
   </form>
 </div>
 
-<label>
-  Sort by:<br>
-    <input type="radio" name="created_at" ng-model="" ng-change="sortBy">Date<br>
-    <input type="radio" name="username" ng-model="" ng-change="sortBy">Username<br>
-    
-</label>
-
 <div id="post-list">
-<a href="#" ui-sref="home.post({id: post.id})"><div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in vm.posts | orderBy: sortBy">
+<a href="#" ui-sref="home.post({id: post.id})"><div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in vm.posts">
   <div class="card-block">
     <h4 class="card-user"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ post.user.username }}</h4>
     <p class="card-content">{{ post.content }}</p>

@@ -8,9 +8,6 @@
     vm.createPost = createPost;
     vm.signedIn = Auth.isAuthenticated();
 
-    $scope.options = ['username', 'created_at'];
-    
-    console.log(Auth.isAuthenticated()); 
     activate();
 
     function activate() {
@@ -33,9 +30,9 @@
                         .then(setPosts)
     };
 
-    function setPosts(data) {
-      vm.posts = data;              
-    }
+      function setPosts(data) {
+        vm.posts = data;              
+      }
 
     function createPost() {
       if (vm.signedIn) {
@@ -51,7 +48,6 @@
       $scope.form.$setUntouched();
       $scope.form.$setPristine();
     }
-
   };
 
   PostsController.$inject = ['$scope', '$state', 'PostFactory', 'Auth']
