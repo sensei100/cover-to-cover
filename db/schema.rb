@@ -59,10 +59,4 @@ ActiveRecord::Schema.define(version: 20161219212427) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
