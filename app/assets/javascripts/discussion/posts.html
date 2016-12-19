@@ -7,8 +7,8 @@
 
     <input type="hidden" id="id" name="id" data-ng-model="vm.post.id" />
     
-    <label for="name">Add a Post:</label>
-    <input ng-model="vm.post.content" type="text" name="content" required="required"></br></br>
+    <label for="name">Add a Post:</label><br>
+    <textarea ng-model="vm.post.content" type="text" name="content" required="required"></textarea></br></br>
 
     <div class="form-error alert alert-danger" ng-if="form.content.$touched && form.content.$error.required"> Content is required!
     </div>
