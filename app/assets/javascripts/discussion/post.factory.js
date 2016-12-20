@@ -11,8 +11,7 @@
       createPost: createPost,
       updatePost: updatePost,
       destroyPost: destroyPost,
-      upVote: upVote,
-      downVote: downVote
+      upVote: upVote
     }
 
     function getPosts() {
@@ -76,15 +75,6 @@
             .then(handleSuccess)
             .catch(handleError)
         }
-
-    function downVote(post) {
-          return $http.put('/posts/' + post.id + '/downvote.json')
-        .success(function (data) {
-          post.downvotes--;
-        })
-          .then(handleSuccess)
-          .catch(handleError)
-      }
     
     function handleSuccess(response) {
       console.log(response)

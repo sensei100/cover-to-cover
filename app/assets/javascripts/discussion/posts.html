@@ -19,7 +19,9 @@
     <input class="btn btn-primary" type="submit" value="Add Post">
   </form>
 </div>
+
 <button ng-click="sortBy()" ng-model="post.upvote">Sort by Likes</button>
+
 <h4 class="post-list-detail">Click on a post for more detail.</h4>
 <div id="post-list">
   <div class="post-card col-md-9 col-md-offset-1" ng-repeat="post in vm.posts">
@@ -28,7 +30,6 @@
       <p class="card-content">{{ post.content }}</p>
       <p class="card-datetime">Written on: {{ post.created_at | date: 'mediumDate'}}</p></a>
       <button ng-click="increment(post)">Like</button>
-      <button ng-click="decrement(post)">Dislike</button>
       <p ng-init="post.upvote=0" >Likes: {{ post.upvote }}</p> 
     </div>
 </div>
