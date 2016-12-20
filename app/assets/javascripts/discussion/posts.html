@@ -20,7 +20,7 @@
   </form>
 </div>
 
-<button ng-click="sortBy()" ng-model="post.upvote">Sort by Likes</button>
+<button ng-click="sortBy()" ng-model="post.upvotes">Sort by Likes</button>
 
 <h4 class="post-list-detail">Click on a post for more detail.</h4>
 <div id="post-list">
@@ -29,7 +29,7 @@
       <a href="#" ui-sref="home.post({id: post.id})"><h4 class="card-user"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ post.user.username }}</h4>
       <p class="card-content">{{ post.content }}</p>
       <p class="card-datetime">Written on: {{ post.created_at | date: 'mediumDate'}}</p></a>
-      <button ng-click="increment(post)">Like</button>
-      <p ng-init="post.upvote=0" >Likes: {{ post.upvote }}</p> 
+      <button class="btn btn-primary" ng-click="vm.addVote(post)"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>  Like</button>
+      <p ng-init="post.upvote=0" >Likes: {{ post.upvotes }}</p> 
     </div>
 </div>
