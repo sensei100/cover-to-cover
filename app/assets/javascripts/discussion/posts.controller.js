@@ -50,6 +50,10 @@
       $scope.form.$setPristine();
     }
 
+    function addVote(post) {
+      return PostFactory.upvote(post);
+    }
+    
     $scope.increment = function(post) {
       post.upvote += 1;
     }
