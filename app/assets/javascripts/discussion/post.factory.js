@@ -70,6 +70,7 @@
     function upVote(post) {
             return $http.put('/posts/' + post.id + '/upvote.json')
           .success(function (data) {
+            console.log(data);
             post.upvotes++;
           })
             .then(handleSuccess)

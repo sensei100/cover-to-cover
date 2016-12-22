@@ -1,0 +1,10 @@
+<h1>My Book Reviews</h1>
+
+<div class="book-card" ng-repeat="book in $ctrl.user.books">
+  <div class="card-block">
+    <h4 class="card-title">{{ book.title }}</h4>
+    <p class="card-author">{{ book.author }}</p>
+    <p class="card-review"> {{ book.review }}</p> 
+     <p class="card-rating"> {{ book.rating }}</p>  
+  </div>
+</div>

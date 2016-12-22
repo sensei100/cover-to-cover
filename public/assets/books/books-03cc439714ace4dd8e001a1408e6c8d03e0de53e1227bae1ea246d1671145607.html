@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div id="user-profile" class="books-banner">
+    </div>
+  </div>
+
+  <ui-view></ui-view>
+
+<div class="book-search-box" ng-hide="$state.includes('home.books.book-details')">
+    <h3 class="book-title">Looking for a new book?</h3>
+    <form id="book-search-form" ng-submit="vm.bookSearch()">
+      <label class="book-search-label">Book Search:</label>
+      <input id="book-input" ng-model="vm.searchTerm" type="text" name="book-search"><br><br>
+            
+      <input class="btn book-submit" type="submit" value="Find Books">
+    </form>
+  </div>
+
+  <div class="card col-md-5" ng-repeat="item in items" ng-hide="$state.includes('home.books.book-details')">
+     <img class="card-img-top" ng-src="{{item.volumeInfo.imageLinks.smallThumbnail}}" alt="Card image cap">
+     <div class="card-block">
+       <h4 class="card-title">{{item.volumeInfo.title}}</h4>
+       <h5 class="card-subtitle">By: {{item.volumeInfo.authors[0]}}</h5>
+       <p class="card-text">Published: {{item.volumeInfo.publisher}}, {{item.volumeInfo.publishedDate}}</p>
+       <a href="" ui-sref="home.books.book-details({id: item.id})" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+</div>

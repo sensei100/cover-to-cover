@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div id="user-profile" class="user-banner">
+    </div>
+  </div>
+</div>
+
+<div ng-include="'nav/navbar.html'"></div>
+<div ng-include="'nav/usernav.html'"></div>
+<div id="profile-bar" class="navbar" ng-controller="ProfileController as vm">
+  <h1>{{ vm.user.username }}'s Profile</h1>
+</div>
+
+  <tabs>
+    <pane  title="">
+      
+    </pane>
+    <pane  title="My Reviews">
+      <book></book>
+    </pane>
+    <pane  title="My Posts">
+      <post></post>
+    </pane>
+  </tabs>
+
+<footer class="navbar-default navbar-fixed-bottom footer">
+  <p id="footer-text">Created by Jennifer Anton &copy; 2016 </p>
+</footer>

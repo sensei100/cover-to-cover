@@ -1,0 +1,60 @@
+<div class="detail-card col-md-9" ng-init="vm.bookDetails()" ng-controller="BooksController as vm">
+  <img class="card-img-top" ng-src="{{ vm.item.imageLinks.smallThumbnail }}" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">{{ vm.item.title }}</h4>
+    <h5 class="card-subtitle">By: {{ vm.item.authors[0] }}</h5>
+    <p id="book-description" ng-init="vm.stripHtml()" class="card-text">Description: {{ vm.item.description | stripTags }}</p>
+    <p class="card-text">Published: {{ vm.item.publisher }}</p>
+    <p class="card-text"> {{ vm.item.publishedDate | date: 'mediumDate' }}</p>
+    <a href="" ng-click="showBookReview = true" class="btn btn-primary">Add a Book Review</a>
+    <a href="" ng-click="goBack()" class="btn btn-success">Go back to search results</a>
+</div>
+
+<div id="book-review-container" class="container" ng-show="showBookReview">
+  <div class="row">
+    <div class="col-md-4">
+      <form id="add-book-review" name="form" ng-submit="vm.createBook()"> 
+
+        <div class="input-group">
+          <label>Title:</label>
+          <input type="text" ng-model="vm.book.title" name="title" required="required">
+        </div> 
+        <div class="form-error alert alert-danger" ng-if="form.review.$touched && form.review.$error.required"> You must include the title!
+        </div>
+        <div class="input-group">
+          <label>Author:</label>
+          <input type="text" ng-model="vm.book.author" name="author" required="required">
+        </div>
+        <div class="form-error alert alert-danger" ng-if="form.review.$touched && form.review.$error.required"> You must include an author!
+        </div>  
+        <div class="input-group">
+          <label>Review:</label>
+          <textarea ng-model="vm.book.review" name="review" required="required" minLength="10" ></textarea>
+        </div>
+        <div class="form-error alert alert-danger" ng-if="form.review.$touched && form.review.$error.required"> You must write a review!
+        </div>
+
+        <div class="form-error alert alert-danger" ng-if="form.review.$error.minlength">Review must be at least 10 characters!
+        </div>
+
+        <div class="input-group">
+          <label>Rating:</label>
+          <select id="rating" name="rating" ng-model="vm.book.rating" required="required">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        </div>
+        <div class="form-error alert alert-danger" ng-if="form.rating.$touched && form.rating.$error.required"> Rating is required!
+        </div>
+
+        <input id="submit-review" class="btn btn-primary" type="submit" value="Submit Review">
+      </form>
+    </div>
+    <div class="col-md-4">
+      
+    </div>
+  </div>
+</div>

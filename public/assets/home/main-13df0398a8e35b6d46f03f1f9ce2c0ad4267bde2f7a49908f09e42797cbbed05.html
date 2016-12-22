@@ -1,0 +1,27 @@
+<div class="col-md-12 main-headline">
+  <h4 class="home-headline">Are you looking for new books to read?  Search through the reviews and ratings that others have written to find your next read.</h4>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 form-div"> 
+    <div>
+      <div class="search-box">
+        <label id="search-label">Search:</label>
+        <input type="text" ng-model="vm.search" ng-change="vm.refilter()" />
+
+        <div class="input-group">
+          <label id="rating-label">Rating:</label>
+          <select name="rating" ng-model="vm.searchRating" ng-change="vm.refilter()" ng-options="book.rating as book.rating for book in vm.books | unique: 'rating'">
+          </select>
+        </div>
+      </div>
+    <div>
+      <ul class="book-list">
+        <li class="book-list-item" ng-repeat="book in vm.filteredList">
+          <a href="" ui-sref="home.books.book({id: book.id})"> {{book.title}} - {{book.author}}</a>
+        </li>    
+      </ul>
+    </div> 
+  </div>  
+</div>
+
