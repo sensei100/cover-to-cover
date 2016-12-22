@@ -42,6 +42,8 @@
         }
   }
 
+  BookComponentController.$inject = ['BookFactory', '$state', 'Auth']
+
   angular
     .module('app')
     .component('book', book)

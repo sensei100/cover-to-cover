@@ -41,6 +41,8 @@
         }
   }
 
+  PostComponentController.$inject = ['PostFactory', '$state', 'Auth']
+
   angular
     .module('app')
     .component('post', post)
