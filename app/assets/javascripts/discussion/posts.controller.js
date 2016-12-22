@@ -7,7 +7,7 @@
     vm.getPosts = getPosts;
     vm.createPost = createPost;
     vm.signedIn = Auth.isAuthenticated();
-
+    vm.addVote = addVote;
 
     activate();
 
@@ -51,17 +51,13 @@
     }
 
     function addVote(post) {
-      return PostFactory.upvote(post);
-    }
-    
-    $scope.increment = function(post) {
-      post.upvote += 1;
+      return PostFactory.upVote(post);
     }
 
     $scope.sortBy = function() {
       
       vm.posts = vm.posts.sort(function(a,b) {
-        return a.upvote < b.upvote;
+        return a.upvotes < b.upvotes;
       }); 
     } 
   };
