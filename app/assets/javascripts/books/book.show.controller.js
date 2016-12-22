@@ -26,6 +26,8 @@
     }
 }
 
+BookShowController.$inject = ['$state', '$stateParams', 'Auth', 'BookFactory']
+
 angular
   .module('app')
   .controller('BookShowController', BookShowController);
