@@ -10,7 +10,7 @@
     templateUrl: 'profile/components/posts-component/user-posts.html'
   }
 
-  function PostComponentController(PostFactory, $state, Auth) {
+  function PostComponentController(PostFactory, $state, $stateParams, Auth) {
     var ctrl = this;
 
     ctrl.getPosts = getPosts;
@@ -41,7 +41,7 @@
         }
   }
 
-  PostComponentController.$inject = ['PostFactory', '$state', 'Auth']
+  PostComponentController.$inject = ['PostFactory', '$state', '$stateParams', 'Auth']
 
   angular
     .module('app')

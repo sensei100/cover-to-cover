@@ -1,12 +1,12 @@
 <h1>My Posts</h1>
 
 <div posts-container>
-  <a href="#" ui-sref="home.post({id: post.id})"><div class="post-card col-md-9 col-md-offset-1" ng-if="post.user_id == $ctrl.user.id" ng-repeat="post in $ctrl.posts | orderBy: orderProp">
-    <div class="card-block">
+  <div class="post-card col-md-9 col-md-offset-1" ng-if="post.user_id == $ctrl.user.id" ng-repeat="post in $ctrl.posts">
+    <a href="#" ui-sref="home.post({id: post.id})"><div class="card-block">
       <h4 class="card-user"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ post.user.username }}</h4>
       <p class="card-content">{{ post.content }}</p>
       <p class="card-datetime">Written on: {{ post.created_at | date: 'mediumDate'}}</p>  
-    </div>
-  </div></a>
+    </div></a>
+  </div>
 </div>
   
