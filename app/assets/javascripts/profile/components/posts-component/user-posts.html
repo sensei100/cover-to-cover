@@ -7,6 +7,8 @@
       <p class="card-content">{{ post.content }}</p>
       <p class="card-content">Likes: {{ post.upvotes || "0" }}</p>
       <p class="card-datetime">Written on: {{ post.created_at | date: 'mediumDate'}}</p>  
+      <a href="" ui-sref="home.edit({ id: post.id })"><button type="button" class="btn btn-warning">Edit Post</button></a>
+    <a href="" ng-click="$ctrl.destroyPost(post.id )"><button type="button" class="btn btn-danger btn-md">Delete Post</button></a>
     </div></a>
   </div>
 </div>
